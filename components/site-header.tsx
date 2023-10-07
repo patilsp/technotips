@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link"
-
+import Image from "next/image"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { CommandMenu } from "@/components/command-menu"
@@ -40,14 +40,18 @@ import {
 export function SiteHeader() {
   
    return (
-    <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full shadow border-b-slate-900 backdrop-blur">
+    <header className="supports-backdrop-blur:bg-background/60 bg-background/90 sticky top-0 z-50 w-full shadow border-b-slate-900 backdrop-blur">
       <div className="flex h-14 items-center px-2">
         <MobileNav />
-        <Link href='/' className='flex-center flex gap-2'>
-            {/* <div style={{ width: '40px', height: '40px' }}>
-              <Lottie animationData={animationData} />
-            </div> */}
-            <p className='logo_text animate mr-2 text-center font-extrabold  tracking-tight text-gray-900 dark:text-white'>DevInsights</p>
+            <Link href='/' className='flex-center flex gap-2'>
+              <Image
+              src='/images/logo.png'
+              width={30}
+              height={30}
+              alt='logo'
+              className='object-contain'
+            />
+            <p className='logo_text animate mr-2 text-center font-extrabold  tracking-tight text-gray-900 dark:text-white'>TechnoTips</p>
         </Link>
         
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">

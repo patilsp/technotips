@@ -26,7 +26,7 @@ export default function Page() {
      
       <div className="block">
         {/* <Menu /> */}
-          <div className="bg-main">
+          <div className="bg-background">
 
             <div className="grid lg:grid-cols-5">
               <Sidebar playlists={playlists} className="hidden lg:block" />
