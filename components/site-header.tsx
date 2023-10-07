@@ -55,14 +55,14 @@ export function SiteHeader() {
             <CommandMenu />
           </div>
           <nav className="flex items-center">
-              {/* <ModeToggle /> */}
+              <ModeToggle />
 
               <div className="w-full flex-1 md:w-auto md:flex-none">
             
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button variant="ghost" className="border p-1 rounded-md border-input bg-transparent shadow-sm hover:bg-accent hover:text-slate-900 mr-1 ">                
+                <button variant="ghost" className="p-1 rounded-md border-input bg-transparent shadow-sm hover:bg-accent mr-1 ">                
                   <FiBell size={24}  />
                 </button>
               </DropdownMenuTrigger>      
