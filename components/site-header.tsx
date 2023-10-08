@@ -65,7 +65,7 @@ export function SiteHeader() {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button variant="ghost" className="h-9 w-9 pl-2 rounded-md border-input bg-transparent shadow-sm hover:bg-accent mr-1">                
+                <button variant="ghost" className="w-9 h-9 px-2 rounded-md border-input bg-transparent shadow-sm hover:bg-accent">                
                   <FiBell size={20}  />
                 </button>
               </DropdownMenuTrigger>      
