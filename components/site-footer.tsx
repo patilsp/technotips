@@ -12,7 +12,7 @@ export function SiteFooter() {
       >
         <footer className="py-2 md:py-0 mt-10">
           <div className="flex flex-col items-center justify-between gap-4 py-4">
-            <p className="text-center text-sm leading-loose text-white">
+            <h3 className="text-center max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
               Built by{" "}
               <a
                 href={siteConfig.links.portfolio}
@@ -32,7 +32,7 @@ export function SiteFooter() {
                 GitHub
               </a>
               .
-            </p>
+            </h3>
           </div>
 
           <div className="mb-10 flex w-full justify-center gap-2">

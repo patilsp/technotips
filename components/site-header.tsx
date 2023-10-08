@@ -40,83 +40,87 @@ import {
 export function SiteHeader() {
   
    return (
-    <header className="supports-backdrop-blur:bg-background/60 bg-background/90 sticky top-0 z-50 w-full shadow border-b-slate-900 backdrop-blur">
-      <div className="flex h-14 items-center px-2">
-        <MobileNav />
-            <Link href='/' className='flex-center flex gap-2'>
-              <Image
-              src='/images/logo.png'
-              width={30}
-              height={30}
-              alt='logo'
-              className='object-contain'
-            />
-            <p className='logo_text animate mr-2 text-center font-extrabold  tracking-tight text-gray-900 dark:text-white'>TechnoTips</p>
-        </Link>
-        
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            <CommandMenu />
-          </div>
-          <nav className="flex items-center">
-              <ModeToggle />
 
-              <div className="w-full flex-1 md:w-auto md:flex-none">
-            
+
+    <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
+      <div className="px-2 flex h-14 items-center">      
+        <MobileNav />
+        <Link href='/' className='flex-center flex gap-2'>
+            <Image
+            src='/images/logo.png'
+            width={30}
+            height={30}
+            alt='logo'
+            className='object-contain mr-1'
+          />
+          <p className='logo_text animate mr-2 text-center font-extrabold  tracking-tight text-gray-900 dark:text-white'>TechnoTips</p>
+      </Link>
+      <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+        <div className="w-full flex-1 md:w-auto md:flex-none">
+          <CommandMenu />
+        </div>
+        <nav className="flex items-center">
+
+        <div className="w-full flex-1 md:w-auto md:flex-none">           
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button variant="ghost" className="p-1 rounded-md border-input bg-transparent shadow-sm hover:bg-accent mr-1 ">                
-                  <FiBell size={24}  />
+                <button variant="ghost" className="h-9 w-9 pl-2 rounded-md border-input bg-transparent shadow-sm hover:bg-accent mr-1">                
+                  <FiBell size={20}  />
                 </button>
               </DropdownMenuTrigger>      
-              <DropdownMenuContent className="w-100 p-4" align="end" forceMount>
-              <Card className="border-none">
-                <CardHeader className="pb-3">
-                  <CardTitle>Notifications</CardTitle>
-                  <CardDescription>
-                    Choose what you want to be notified about.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-1">
-                  <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
-                    <BellIcon className="mt-px h-5 w-5" />
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium ">Everything</p>
-                      <p className="text-sm text-muted-foreground">
-                        Email digest, mentions & all activity.
-                      </p>
+                <DropdownMenuContent className="w-100 p-4" align="end" forceMount>
+                <Card className="border-none">
+                  <CardHeader className="pb-3">
+                    <CardTitle>Notifications</CardTitle>
+                    <CardDescription>
+                      Choose what you want to be notified about.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="grid gap-1">
+                    <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
+                      <BellIcon className="mt-px h-5 w-5" />
+                      <div className="space-y-1">
+                        <p className="text-sm font-medium ">Everything</p>
+                        <p className="text-sm text-muted-foreground">
+                          Email digest, mentions & all activity.
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="-mx-2 flex items-start space-x-4 rounded-md bg-accent p-2 text-accent-foreground transition-all">
-                    <PersonIcon className="mt-px h-5 w-5" />
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium ">Available</p>
-                      <p className="text-sm text-muted-foreground">
-                        Only mentions and comments.
-                      </p>
+                    <div className="-mx-2 flex items-start space-x-4 rounded-md bg-accent p-2 text-accent-foreground transition-all">
+                      <PersonIcon className="mt-px h-5 w-5" />
+                      <div className="space-y-1">
+                        <p className="text-sm font-medium ">Available</p>
+                        <p className="text-sm text-muted-foreground">
+                          Only mentions and comments.
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
-                    <EyeNoneIcon className="mt-px h-5 w-5" />
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium ">Ignoring</p>
-                      <p className="text-sm text-muted-foreground">
-                        Turn off all notifications.
-                      </p>
+                    <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
+                      <EyeNoneIcon className="mt-px h-5 w-5" />
+                      <div className="space-y-1">
+                        <p className="text-sm font-medium ">Ignoring</p>
+                        <p className="text-sm text-muted-foreground">
+                          Turn off all notifications.
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-          </Card>
-        </DropdownMenuContent>
-      </DropdownMenu>
+                  </CardContent>
+            </Card>
+          </DropdownMenuContent>
+        </DropdownMenu>
       
             
           </div>
-              <Nav />         
-          </nav>
-        </div>
+         
+          <ModeToggle />
+          <Nav /> 
+        </nav>
       </div>
-    </header>
+    </div>
+  </header>
+
+
+ 
   )
 }

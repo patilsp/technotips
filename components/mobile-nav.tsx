@@ -26,13 +26,8 @@ export function MobileNav() {
           variant="ghost"
           className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
-         
-          
-        <label for="checkbox" className="toggle">
-            <div className="bars" id="bar1"></div>
-            <div className="bars" id="bar2"></div>
-            <div className="bars" id="bar3"></div>
-        </label>
+          <ViewVerticalIcon className="h-5 w-5" />
+          <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="pr-0 bg-main">

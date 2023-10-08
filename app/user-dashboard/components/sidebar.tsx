@@ -12,7 +12,7 @@ export function Sidebar({ className, playlists }: SidebarProps) {
   return (
     <div className={cn("pb-12", className)}>
         <ScrollArea className="h-[1000px]">
-          <div className="space-y-4 py-4 sidebar">
+          <div className="space-y-4 py-4 sidebar h-[1000px]">
             <div className="px-3 py-2">
               <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
                 Menu

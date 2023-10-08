@@ -23,14 +23,14 @@ const Nav = () => {
     }, []);
 
     // Check if the session exists and if not, redirect to the authentication page
-    useEffect(() => {
-        if (!session?.user) {
-            router.push("/authentication");
-        }
-    }, [session, router]);
+    // useEffect(() => {
+    //     if (!session?.user) {
+    //         router.push("/authentication");
+    //     }
+    // }, [session, router]);
 
     return (
-        <nav className="flex-between mr-1 w-full">
+        <nav className="flex-between ml-2 w-full">
             {session?.user ? (
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>

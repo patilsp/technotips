@@ -10,6 +10,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "react-hot-toast"
 import  SessionProvider  from "@/components/Provider";
+import ReactQueryProvider from '@/components/ReactQueryProvider'
 
 export const metadata: Metadata = {
   title: {
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
     "Next.js blog",
     "React blog",
     "Tailwind CSS blog",
-    "Developer blog",
-    "Radix UI",
+    "technotipsblog",
+    "technotips",
   ],
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -60,7 +61,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
           >
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
-                <div className="flex-1">{children}</div>
+                <div className="flex-1">
+                  {children}</div>
               <SiteFooter />
             </div>
             <Toaster />

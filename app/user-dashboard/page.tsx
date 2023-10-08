@@ -18,7 +18,7 @@ import { PodcastEmptyPlaceholder } from "./components/podcast-empty-placeholder"
 import { Sidebar } from "./components/sidebar"
 import { listenNowAlbums, madeForYouAlbums } from "./data/albums"
 import { playlists } from "./data/playlists"
-import Feeds from "@/components/Feed"
+import Feed from "@/components/Feed"
 
 export default function Page() {
   return (
@@ -35,7 +35,7 @@ export default function Page() {
                     <div className="relative">
                         <ScrollArea>
                           <div className="flex space-x-4 pb-4">
-                              <Feeds />
+                            <Feed />
                           </div>
                           <ScrollBar orientation="horizontal" />
                         </ScrollArea>
