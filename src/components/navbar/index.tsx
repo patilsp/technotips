@@ -20,7 +20,7 @@ const Navbar = async () => {
 
 						/>
 					<p className="hidden text-zinc-700 text-sm font-medium md:block">
-						CommunityHub
+						TechnoTips
 					</p>
 				</Link>
 

@@ -16,15 +16,15 @@ const SignUp = () => {
           />
         <h1 className='text-2xl font-semibold tracking-tight'>Sign Up</h1>
         <p className='text-sm max-w-xs mx-auto'>
-          By continuing, you are setting up a CommunityHub account and agree to our
+          By continuing, you are setting up a TechnoTips account and agree to our
           User Agreement and Privacy Policy.
         </p>
       </div>
       <div className='px-4 py-4'>
           <UserAuthForm />
       </div>
-      <p className='px-8 text-center text-sm text-muted-foreground'>
-        Already a CommunityHub?{' '}
+      <p className='px-8 text-center text-sm text-muted-foreground pr-4'>
+        Already a TechnoTips?{' '}
         <Link
           href='/sign-in'
           className='hover:text-brand text-sm underline underline-offset-4 pr-4'>

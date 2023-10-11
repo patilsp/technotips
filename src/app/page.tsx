@@ -47,13 +47,13 @@ export default async function Home() {
           <div className='hidden md:block overflow-hidden h-fit rounded-lg border border-gray-300 order-second md:order-last'>
             <div className='bg-gray-200 px-6 py-2'>
               <h1 className=' text-xl  font-semibold py-3 flex items-center gap-1.5'>                
-                Advertise on CommunityHub
+                Advertise on TechnoTips
               </h1>
             </div>
             <div className='-my-3 divide-gray-100 px-6 py-4 text-sm leading-6'>
               <div className='flex justify-between gap-x-4 py-3'>
                 <p className='text-zinc-500'>
-                  Unlock Your Brands Potential with CommunityHub Advertising! Reach a Diverse and Engaged Audience, Drive Traffic, and Boost Your Brands Visibility. Advertise Today!
+                  Unlock Your Brands Potential with TechnoTips Advertising! Reach a Diverse and Engaged Audience, Drive Traffic, and Boost Your Brands Visibility. Advertise Today!
                 </p>
               </div>
               <div className="flex justify-between gap-2">
@@ -93,7 +93,7 @@ export default async function Home() {
                   />
 
               </div>
-                <h3 className='text-zinc-600 text-xl text-center'> CommunityHub Premium <span className="text-green-600 text-sm"> Try It Now </span> </h3>
+                <h3 className='text-zinc-700 text-xl text-center mt-2 mb-2'> TechnoTips Premium <span className="text-green-600 text-sm"> Try It Now </span> </h3>
               <Link
                 className='btn-pro w-full mt-2 mb-4'
                 href='#'>

@@ -10,8 +10,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    title: 'CommunityHub',
-    description: "CommunityHub is a network of communities where people can dive into their interests, hobbies and passions. There's a community for whatever you're interested in",
+    title: 'TechnoTips',
+    description: "TechnoTips is a network of communities where people can dive into their interests, hobbies and passions. There's a community for whatever you're interested in",
   },
   keywords: [
     "Next.js blog",
