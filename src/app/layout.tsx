@@ -47,7 +47,7 @@ export default function RootLayout({
           {authModal}
           <div className='p-4 max-w-7xl mx-auto h-full pt-10'>
             {children}
-          </div>
+          </div>          
         </Providers>
         <Toaster />
       </body>

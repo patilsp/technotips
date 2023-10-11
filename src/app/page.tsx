@@ -5,6 +5,7 @@ import { getAuthSession } from '@/lib/auth'
 import { Home as HomeIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { EyeNoneIcon } from "@radix-ui/react-icons"
 
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
@@ -15,16 +16,14 @@ export default async function Home() {
   return (
     <>
       <h1 className='h1 font-bold text-3xl md:text-4xl'> Your feed</h1>
-      {/* <div className="hero">
-        <div className="text-bg-image">
+      {/* <div className='hero'>
+        <div className='text-bg-image'>
           <h2>Your Feeds</h2>
         </div>
       </div> */}
       <div className='grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-6'>
-        {/* @ts-expect-error server component */}
         {session ? <CustomFeed /> : <GeneralFeed />}
 
-        {/* subreddit info */}
         <div className="flex flex-col gap-5">
           <div className='overflow-hidden h-fit rounded-lg border border-gray-300 order-first md:order-last'>
             <div className='bg-green-300 px-6 py-2'>
@@ -84,7 +83,7 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          <div className='overflow-hidden h-fit rounded-lg border border-gray-300 order-first md:order-last'>
+          <div className=' hidden md:block overflow-hidden h-fit rounded-lg border border-gray-300 order-first md:order-last'>
            
             <div className='-my-3 divide-gray-100 px-6 py-4 text-sm leading-6'>
               <div className='flex justify-center py-2'>
@@ -102,12 +101,24 @@ export default async function Home() {
               <Link
                 className='btn-pro w-full mt-2 mb-4'
                 href='#'>
-                Try Now
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
+                        <path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path>
+                    </svg>
+                    Unlock Pro
+          
               </Link>
             </div>
           </div>
         </div>
       </div>
+
+      {/* <div className='right absolute bottom-0 '>
+        <button className='chatBtn'>
+          <EyeNoneIcon size={24} />
+          <span className="tooltip">Chat</span>
+          </button>
+        </div> */}
+         
     </>
   )
 }

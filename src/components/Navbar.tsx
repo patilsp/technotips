@@ -48,7 +48,7 @@ const Navbar = async () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button variant="ghost" className="border p-1 rounded-md border-input bg-transparent shadow-sm hover:bg-accent hover:text-slate-900 mr-1 ">                
-                  <Bell size={24}  />
+                  <Bell className="bell" size={24}  />
                 </button>
               </DropdownMenuTrigger>      
               <DropdownMenuContent className="w-100 p-4" align="end" forceMount>

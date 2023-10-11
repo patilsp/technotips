@@ -66,7 +66,7 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
           <p className='max-h-40 truncate text-xs text-gray-500'>
             Posted by {post?.author.username ?? cachedPost.authorUsername}{' '}</p>
             <span className="tag">{formatTimeToNow(new Date(post?.createdAt ?? cachedPost.createdAt))}</span>
-          
+            
           </div>
           
 

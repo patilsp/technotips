@@ -8,6 +8,8 @@ import { FC, useRef } from 'react'
 import EditorOutput from './EditorOutput'
 import PostVoteClient from './post-vote/PostVoteClient'
 
+
+
 type PartialVote = Pick<Vote, 'type'>
 
 interface PostProps {
@@ -54,8 +56,10 @@ const Post: FC<PostProps> = ({
               </>
             ) : null}
 
-            Posted by {post.author.username}{' '}</span>
-            <span className="tag">{formatTimeToNow(new Date(post.createdAt))}</span>          
+            Posted by {post.author.username}{' '}
+            <p className="tag">{formatTimeToNow(new Date(post.createdAt))}</p> 
+            </span>
+            <a class="border rounded-md text-xs px-2 py-1 font-semibold text-indigo-600 hover:bg-indigo-900 hover:text-white " href="/follow">Follow </a>       
           </div>
 
           </div>
@@ -92,7 +96,10 @@ const Post: FC<PostProps> = ({
           href={`/r/${subredditName}/post/${post.id}`}
           className='w-fit flex items-center gap-2'>
           <MoreHorizontal className='h-4 w-4' /> 
-        </Link>        
+        </Link>    
+
+       
+    
       </div>
     </div>
   )
