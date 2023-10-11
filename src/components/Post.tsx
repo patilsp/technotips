@@ -46,7 +46,7 @@ const Post: FC<PostProps> = ({
             {subredditName ? (
               <>
                 <a
-                  className='underline text-blue-700 text-semibold text-sm underline-offset-2'
+                  className='underline link text-sm underline-offset-2'
                   href={`/r/${subredditName}`}>
                   {subredditName}
                 </a>

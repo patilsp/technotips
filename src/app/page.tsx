@@ -15,6 +15,11 @@ export default async function Home() {
   return (
     <>
       <h1 className='h1 font-bold text-3xl md:text-4xl'> Your feed</h1>
+      {/* <div className="hero">
+        <div className="text-bg-image">
+          <h2>Your Feeds</h2>
+        </div>
+      </div> */}
       <div className='grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-6'>
         {/* @ts-expect-error server component */}
         {session ? <CustomFeed /> : <GeneralFeed />}

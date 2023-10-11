@@ -5,28 +5,22 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { UserAccountNav } from './UserAccountNav'
 import SearchBar from './SearchBar'
-import { Bell } from 'lucide-react'
+import { EyeNoneIcon } from "@radix-ui/react-icons"
+import { Bell, Users } from 'lucide-react'
 
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
-  DropdownMenuShortcut,
 } from '@/components/ui/DropdownMenu'
 
-import { Button } from '@/components/ui/Button'
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card'
-import { Input } from '@/components/ui/Input'
-import { Label } from '@/components/ui/Label'
 
 
 
@@ -44,8 +38,8 @@ const Navbar = async () => {
 						height={30}
 						className="mx-auto h-auto w-auto object-contain"
 						/>
-          <p className='hidden text-zinc-900 text-sm font-bold md:block text-shadow'>TechnoTips</p>
-
+          <p className='hidden text-zinc-100 text-sm logo-text font-bold md:block text-shadow'>TechnoTips</p>
+            
         </Link>
        <SearchBar />
        <div className='flex gap-2 items-center'>
@@ -76,7 +70,7 @@ const Navbar = async () => {
                     </div>
                   </div>
                   <div className="-mx-2 flex items-center space-x-4 rounded-md bg-accent p-2 text-accent-foreground transition-all">
-                    <Bell className="mt-px h-5 w-5" />
+                    <Users className="mt-px h-5 w-5" />
                     <div className="space-y-1">
                       <p className="text-sm font-medium ">Available</p>
                       <p className="text-sm text-muted-foreground">
@@ -84,8 +78,8 @@ const Navbar = async () => {
                       </p>
                     </div>
                   </div>
-                  <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
-                    <Bell className="mt-px h-5 w-5" />
+                  <div className="-mx-2 flex items-center space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
+                    <EyeNoneIcon className="mt-px h-5 w-5" />
                     <div className="space-y-1">
                       <p className="text-sm font-medium ">Ignoring</p>
                       <p className="text-sm text-muted-foreground">

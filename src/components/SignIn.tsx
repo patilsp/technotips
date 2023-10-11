@@ -1,11 +1,17 @@
+'use client'
 import UserAuthForm from '@/components/UserAuthForm'
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const SignIn = () => {
   return (
     <div className=' flex flex-col md:flex-row justify-center items-center'>
-  
+      <motion.div
+        initial={{ opacity: 0, y: 50 }} 
+        animate={{ opacity: 1, y: 0 }}    
+        transition={{ duration: 1, delay: 1 }} 
+      >
 
       <div className='p-2'>
         <div className='flex flex-col space-y-2 text-center items-center'>
@@ -34,6 +40,7 @@ const SignIn = () => {
           </Link>
         </p>
       </div>
+      </motion.div>
     </div>
   )
 }
