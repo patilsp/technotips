@@ -82,7 +82,7 @@ export default async function Home() {
           <div className='overflow-hidden h-fit rounded-lg border border-gray-300 order-first md:order-last'>
            
             <div className='-my-3 divide-gray-100 px-6 py-4 text-sm leading-6'>
-              <div className='flex justify-between gap-x-4 py-3'>
+              <div className='flex justify-center py-2'>
                 <Image 
                   src="/images/statistics.png"
                   alt="statistics"
@@ -93,7 +93,7 @@ export default async function Home() {
                   />
 
               </div>
-                <h3 className='text-zinc-700 text-xl text-center mt-2 mb-2'> TechnoTips Premium <span className="text-green-600 text-sm"> Try It Now </span> </h3>
+                <h3 className='text-zinc-700 text-bold text-xl text-center mt-2 mb-2'> TechnoTips Premium <span className="text-green-600 text-sm"> Try It Now </span> </h3>
               <Link
                 className='btn-pro w-full mt-2 mb-4'
                 href='#'>

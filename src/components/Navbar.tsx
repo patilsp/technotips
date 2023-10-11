@@ -40,8 +40,8 @@ const Navbar = async () => {
         <Image 
 						src="/images/logo.png"
 						alt="logo"
-						width={35}
-						height={35}
+						width={30}
+						height={30}
 						className="mx-auto h-auto w-auto object-contain"
 						/>
           <p className='hidden text-zinc-900 text-sm font-bold md:block text-shadow'>TechnoTips</p>

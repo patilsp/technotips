@@ -146,11 +146,14 @@
 .btn-pro {
   width: 100%;
   display: flex;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   cursor: pointer;
   gap: 0.4rem;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 5px;
   text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
   background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
   background-size: 300%;
