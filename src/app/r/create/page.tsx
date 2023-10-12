@@ -60,7 +60,7 @@ const Page = () => {
 
   return (
     <div className='container flex items-center h-full max-w-3xl mx-auto mt-10'>
-      <div className='relative bg-white w-full h-fit p-4 rounded-lg space-y-6 border'>
+      <div className='relative bg-white dark:bg-slate-900 w-full h-fit p-4 rounded-lg space-y-6 border'>
         <div className='flex justify-between items-center'>
           <h1 className='h1 text-xl font-semibold'>Create a Community</h1>
         </div>
@@ -74,7 +74,7 @@ const Page = () => {
           </p>
           <div className='relative'>
             <p className='absolute text-sm left-0 w-8 inset-y-0 grid place-items-center text-zinc-400'>
-              <span class="text-xs px-2">⌘</span>
+              <span className="text-xs px-2">⌘</span>
             </p>
             <Input
               value={input}

@@ -33,7 +33,7 @@ const Post: FC<PostProps> = ({
   const pRef = useRef<HTMLParagraphElement>(null)
 
   return (
-    <div className='rounded-md bg-white shadow border dark:bg-black'>
+    <div className='rounded-md bg-white shadow border dark:bg-slate-900'>
       <div className='px-3 py-2 flex justify-between'>
         <PostVoteClient
           postId={post.id}
@@ -59,7 +59,7 @@ const Post: FC<PostProps> = ({
             Posted by {post.author.username}{' '}
             <p className="tag">{formatTimeToNow(new Date(post.createdAt))}</p> 
             </span>
-            <a class="border rounded-md text-xs px-2 py-1 font-semibold text-indigo-600 hover:bg-indigo-900 hover:text-white " href="/follow">Follow </a>       
+            <a className="border rounded-md text-xs px-2 py-1 font-semibold text-indigo-600 hover:bg-indigo-900 hover:text-white " href="/follow">Follow </a>       
           </div>
 
           </div>

@@ -45,7 +45,7 @@ const Navbar = async () => {
         </Link>
        <SearchBar />
        <div className='flex gap-2 items-center'>
-        <ModeToggle /> 
+        {/* <ModeToggle />  */}
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

@@ -1,15 +1,17 @@
-import "@/styles/globals.css"
-import { Metadata } from "next"
+import '@/styles/globals.css'
+import { Metadata } from 'next'
 
-import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
-import SiteHeader from '@/components/Navbar'
+import { siteConfig } from '@/config/site'
+import { Inter } from 'next/font/google'
+import { cn } from '@/lib/utils'
+import  SiteHeader  from '@/components/Navbar'
 import { SiteFooter } from "@/components/site-footer"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from '@/components/ui/Toaster'
 import  SessionProvider from  '@/components/Providers'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
@@ -50,7 +52,7 @@ export default function RootLayout({ children, authModal }: RootLayoutProps) {
       <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
+            inter.className
           )}
         >
           <ThemeProvider
@@ -62,7 +64,7 @@ export default function RootLayout({ children, authModal }: RootLayoutProps) {
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
               {authModal}
-                <div className="p-4 max-w-7xl mx-auto h-full">{children}</div>
+                <div className="p-4 max-w-7xl mx-auto w-full h-full">{children}</div>
               <SiteFooter />
             </div>
             <Toaster />
