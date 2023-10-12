@@ -1,24 +1,33 @@
-import Navbar from '@/components/Navbar'
-import { cn } from '@/lib/utils'
-import { Inter } from 'next/font/google'
-import Providers from '@/components/Providers'
+import "@/styles/globals.css"
+import { Metadata } from "next"
+
+import { siteConfig } from "@/config/site"
+import { fontSans } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
+import SiteHeader from '@/components/Navbar'
+import { SiteFooter } from "@/components/site-footer"
+import { TailwindIndicator } from "@/components/tailwind-indicator"
+import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from '@/components/ui/Toaster'
-
-import '@/styles/globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import  SessionProvider from  '@/components/Providers'
 
 export const metadata: Metadata = {
   title: {
-    title: 'TechnoTips',
-    description: "TechnoTips is a network of communities where people can dive into their interests, hobbies and passions. There's a community for whatever you're interested in",
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
   },
+  description: siteConfig.description,
   keywords: [
     "Next.js blog",
     "React blog",
     "Tailwind CSS blog",
     "Developer blog",
-    "Radix UI",
+    "Official UI",
+  ],
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    
   ],
   icons: {
     icon: "/favicon.png",
@@ -27,30 +36,41 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-  authModal,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode
   authModal: React.ReactNode
-}) {
+}
+
+export default function RootLayout({ children, authModal }: RootLayoutProps) {
   return (
-    <html
-      lang='en'
-      className={cn(
-        'bg-white text-slate-900 antialiased light',
-        inter.className
-      )}>
-      <body className='min-h-screen pt-10 bg-slate-50 antialiased'>
-        <Providers>
-          <Navbar />
-          {authModal}
-          <div className='p-4 max-w-7xl mx-auto h-full pt-10'>
-            {children}
-          </div>          
-        </Providers>
-        <Toaster />
-      </body>
-    </html>
+    <>
+    <SessionProvider>
+      <html lang="en" suppressHydrationWarning>
+        
+      <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable
+          )}
+        >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="relative flex min-h-screen flex-col">
+              <SiteHeader />
+              {authModal}
+                <div className="p-4 max-w-7xl mx-auto h-full">{children}</div>
+              <SiteFooter />
+            </div>
+            <Toaster />
+            <TailwindIndicator />
+          </ThemeProvider>
+        </body>
+      </html>
+      </SessionProvider>
+    </>
   )
 }

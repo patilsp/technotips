@@ -23,7 +23,7 @@ const CreateComment: React.FC<CreateCommentProps> = ({ postId, replyToId }) => {
 	const router = useRouter();
 
 	const { postComment, isLoading } = usePostComment({
-		onSuccess(data) {
+		onSuccess() {
 			router.refresh();
 			setInput("");
 		},

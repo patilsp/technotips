@@ -33,7 +33,7 @@ const Post: FC<PostProps> = ({
   const pRef = useRef<HTMLParagraphElement>(null)
 
   return (
-    <div className='rounded-md bg-white shadow border'>
+    <div className='rounded-md bg-white shadow border dark:bg-black'>
       <div className='px-3 py-2 flex justify-between'>
         <PostVoteClient
           postId={post.id}
@@ -64,24 +64,24 @@ const Post: FC<PostProps> = ({
 
           </div>
           <a href={`/r/${subredditName}/post/${post.id}`}>
-            <h1 className='text-lg font-semibold py-2 leading-6 text-slate-900'>
+            <h1 className='text-lg font-semibold py-2 leading-6 text-slate-900 dark:text-white'>
               {post.title}
             </h1>
           </a>
 
           <div
-            className='relative text-sm max-h-40 w-full overflow-clip'
+            className='text-sm max-h-40 w-full overflow-clip'
             ref={pRef}>
             <EditorOutput content={post.content} />
             {pRef.current?.clientHeight === 160 ? (
               // blur bottom if content is too long
-              <div className='absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-white to-transparent'></div>
+              <div className='absolute bottom-0 left-0 h-24 w-full from-white to-transparent'></div>
             ) : null}
           </div>
         </div>
       </div>
 
-      <div className='flex justify-between bg-gray-100 m-2 gap-2 rounded-md z-20 text-sm px-4 py-4 sm:px-6'>
+      <div className='flex justify-between bg-gray-100 dark:bg-slate-800 m-2 gap-2 rounded-md z-20 text-sm px-4 py-4 sm:px-6'>
         <Link
           href={`/r/${subredditName}/post/${post.id}`}
           className='w-fit flex items-center gap-2'>

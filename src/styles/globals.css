@@ -6,24 +6,24 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
     --radius: 0.5rem;
   }
  
@@ -61,6 +61,12 @@
   }
 }
 
+p{
+  @apply text-slate-600 dark:text-slate-400;
+}
+h1{
+  @apply leading-6 text-slate-900 dark:text-white;
+}
 
 .tag{
   @apply inline-flex items-center rounded-md border px-1.5 text-xs text-[10px] transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground;
@@ -120,43 +126,6 @@
 }
 
 
-
-.hero {
-  color: #25657E;
-  height: 100vh;
-  flex-direction: column;
-  align-itens: left;
-  justify-content: start;
-  text-align: center;
-  font-family: 'Onest', sans-serif;
-}
-
-.hero h2 {
-  margin: 0 auto;
-  font-weight: 900;
-  font-size: 22px;
-  line-height: 100%;
-}
-
-.text-bg-image {
-  background-image:  url(https://images.unsplash.com/photo-1528722828814-77b9b83aafb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  color:  #ffffff;
-  animation: animate-bg 30s ease infinite;
-}
-
-@keyframes animate-bg {
-  0% {
-    background-position: center 25%;
-  }
-  50% {
-    background-position: center 50%;
-  }
-  100% {
-    background-position: center 25%;
-  }
-}
 
 .navbar{
   position: fixed;

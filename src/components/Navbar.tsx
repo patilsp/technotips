@@ -7,6 +7,8 @@ import { UserAccountNav } from './UserAccountNav'
 import SearchBar from './SearchBar'
 import { EyeNoneIcon } from "@radix-ui/react-icons"
 import { Bell, Users } from 'lucide-react'
+import { MobileNav } from "@/components/mobile-nav"
+import { ModeToggle } from "@/components/mode-toggle"
 
 import {
   DropdownMenu,
@@ -27,9 +29,9 @@ import {
 const Navbar = async () => {
   const session = await getServerSession(authOptions)
   return (
-    <div className='navbar fixed top-0 inset-x-0 h-fit bg-zinc-100 border-b border-zinc-300 z-[10] py-2'>
-      <div className='px-2  max-w-7xl h-full mx-auto flex items-center justify-between gap-2'>
-    
+    <div className='supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full p-1 border-b bg-background/95 backdrop-blur'>
+      <div className='px-2 max-w-7xl h-full mx-auto flex items-center justify-between gap-2'>
+        <MobileNav />
         <Link href='/' className='flex gap-2 items-center'>
         <Image 
 						src="/images/logo.png"
@@ -43,11 +45,11 @@ const Navbar = async () => {
         </Link>
        <SearchBar />
        <div className='flex gap-2 items-center'>
-         
+        <ModeToggle /> 
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button variant="ghost" className="border p-1 rounded-md border-input bg-transparent shadow-sm hover:bg-accent hover:text-slate-900 mr-1 ">                
+                <button variant="ghost" className="p-1 rounded-md border-input bg-transparent border shadow-sm hover:bg-accent hover:text-slate-900 mr-1 ">                
                   <Bell className="bell" size={24}  />
                 </button>
               </DropdownMenuTrigger>      

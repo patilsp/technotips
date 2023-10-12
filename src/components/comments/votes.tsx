@@ -35,7 +35,7 @@ const CommentVotes: React.FC<PostVoteClientProps> = ({
 
 	const { isLoading, vote } = useVoteComment({
 		commentId: commentId,
-		onSuccess(data, variables, context) {},
+		onSuccess() {},
 		onError(error, variables) {
 			const { voteType } = variables;
 

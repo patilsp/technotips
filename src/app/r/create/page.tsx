@@ -59,16 +59,16 @@ const Page = () => {
   })
 
   return (
-    <div className='container flex items-center h-full max-w-3xl mx-auto'>
+    <div className='container flex items-center h-full max-w-3xl mx-auto mt-10'>
       <div className='relative bg-white w-full h-fit p-4 rounded-lg space-y-6 border'>
         <div className='flex justify-between items-center'>
-          <h1 className='text-xl font-semibold'>Create a Community</h1>
+          <h1 className='h1 text-xl font-semibold'>Create a Community</h1>
         </div>
 
         <hr className='bg-red-500 h-px' />
 
         <div>
-          <h1 className='h1 text-lg font-medium mb-1'>Name</h1>
+          <h1 className='text-xl font-medium mb-1'>Name</h1>
           <p className='text-zinc-700  pb-2 mb-2'>
             Community names including capitalization cannot be changed.
           </p>
