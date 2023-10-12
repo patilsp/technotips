@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import { Metadata } from 'next'
-
+import { fontSans } from '@/lib/fonts'
 import { siteConfig } from '@/config/site'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
@@ -52,7 +52,7 @@ export default function RootLayout({ children, authModal }: RootLayoutProps) {
       <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
-            inter.className
+            fontSans.variable
           )}
         >
           <ThemeProvider
@@ -64,7 +64,7 @@ export default function RootLayout({ children, authModal }: RootLayoutProps) {
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
               {authModal}
-                <div className="p-4 max-w-7xl mx-auto w-full h-full">{children}</div>
+                <div className="flex-1">{children}</div>
               <SiteFooter />
             </div>
             <Toaster />
