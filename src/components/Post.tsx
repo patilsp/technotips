@@ -2,12 +2,22 @@
 
 import { formatTimeToNow } from '@/lib/utils'
 import { Post, User, Vote } from '@prisma/client'
-import { MessageSquare, Share,  MoreHorizontal } from 'lucide-react'
+import { MessageSquare, Share,  MoreHorizontal, Plus } from 'lucide-react'
 import Link from 'next/link'
 import { FC, useRef } from 'react'
 import EditorOutput from './EditorOutput'
 import PostVoteClient from './post-vote/PostVoteClient'
-
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/registry/new-york/ui/dropdown-menu'
+import { Button } from '@/registry/new-york/ui/button'
+import { Separator } from '@/registry/new-york/ui/separator'
 
 
 type PartialVote = Pick<Vote, 'type'>
@@ -92,12 +102,36 @@ const Post: FC<PostProps> = ({
           className='w-fit flex items-center gap-2'>
           <Share className='h-4 w-4' /> Share
         </Link>
-        <Link
-          href={`/r/${subredditName}/post/${post.id}`}
-          className='w-fit flex items-center gap-2'>
-          <MoreHorizontal className='h-4 w-4' /> 
-        </Link>    
-
+       
+        <div className="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
+       
+         
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="secondary" className="px-2 shadow-none">
+                <MoreHorizontal className='h-4 w-4' /> 
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="end"
+              alignOffset={-5}
+              className="w-[250px]"
+              forceMount
+            >
+              <DropdownMenuLabel>Suggested Lists</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuCheckboxItem checked>
+                Show More Posts Like This.
+              </DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem>Hide Post</DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem>Report This Post</DropdownMenuCheckboxItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <Plus className="mr-2 h-4 w-4" />Add To Favorite
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
        
     
       </div>

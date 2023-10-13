@@ -1,6 +1,6 @@
 import SubscribeLeaveToggle from '@/components/SubscribeLeaveToggle'
 import ToFeedButton from '@/components/ToFeedButton'
-import { buttonVariants } from '@/components/ui/Button'
+import { buttonVariants } from '@/registry/new-york/ui/button'
 import { getAuthSession } from '@/lib/auth'
 import { db } from '@/lib/db'
 import { format } from 'date-fns'
@@ -104,7 +104,7 @@ const Layout = async ({
               <Link
                 className={buttonVariants({
                   variant: 'outline',
-                  className: 'w-full mb-6',
+                  className: 'w-full mb-6 bg-slate-900 text-white',
                 })}
                 href={`${slug}/submit`}>
                 Create Post

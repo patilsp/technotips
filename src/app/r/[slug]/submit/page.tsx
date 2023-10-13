@@ -26,8 +26,8 @@ const page = async ({ params }: pageProps) => {
           <h3 className='ml-2 mt-2 text-base font-semibold leading-6 text-gray-900'>
             Create Post
           </h3>
-          <p className='ml-2 mt-1 truncate text-sm text-gray-500'>
-            in {params.slug} Community
+          <p className='flex justify-between gap-1 align-center ml-2 truncate text-sm text-gray-500'>
+            In <p className="text-orange-500 font-semibold">{params.slug} </p> Community
           </p>
         </div>
       </div>
