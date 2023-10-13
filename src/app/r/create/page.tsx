@@ -11,9 +11,9 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 
-import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
+import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/Card"
+import { Label } from "@/components/ui/Label"
+import { Switch } from "@/components/ui/Switch"
 
 const Page = () => {
   const router = useRouter()

@@ -4,9 +4,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
-import { buttonVariants } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/Button'
+import { Input } from '@/components/ui/Input'
+import { Button } from '@/components/ui/Button'
 import { motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
 
@@ -37,7 +37,7 @@ export default function Welcome() {
               href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
-              className=" text-black text-white border"
+              className=" text-white border"
             >
               GitHub
             </Button>
