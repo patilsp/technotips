@@ -13,7 +13,7 @@ import { useState } from 'react'
 
 import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/Card"
 import { Label } from "@/components/ui/Label"
-import { Switch } from "@/components/ui/Switch"
+import { Switch } from "@/components/ui/switch"
 
 const Page = () => {
   const router = useRouter()
