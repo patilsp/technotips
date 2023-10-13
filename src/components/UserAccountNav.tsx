@@ -30,6 +30,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
       <DropdownMenuContent className='bg-white' align='end'>
         <div className='flex items-center justify-start gap-2 p-2'>
           <div className='flex flex-col space-y-1 leading-none'>
+           
             {user.name && <p className='font-medium'>{user.name}</p>}
             {user.email && (
               <p className='w-[200px] truncate text-sm text-muted-foreground'>
@@ -43,7 +44,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           <Link href='/'>
       
           Create Post
-          <DropdownMenuShortcut>⌘F</DropdownMenuShortcut>
+          <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
           </Link>         
         </DropdownMenuItem>
 
@@ -52,17 +53,18 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href='/forms'>User Profile
-          <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
-          </Link>
-        </DropdownMenuItem>
+        
 
         <DropdownMenuItem asChild>
-          <Link href='/settings'>Settings
-          <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+          <Link href='/settings'>Change Username
+          <DropdownMenuShortcut>⌘U</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link href='/forms'>Profile Settings
+          <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+          </Link>
+        </DropdownMenuItem> 
         <DropdownMenuSeparator />
         <DropdownMenuItem
           className='cursor-pointer'
