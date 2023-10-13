@@ -2,7 +2,6 @@ import '@/styles/globals.css'
 import { Metadata } from 'next'
 import { fontSans } from '@/lib/fonts'
 import { siteConfig } from '@/config/site'
-import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import  SiteHeader  from '@/components/Navbar'
 import { SiteFooter } from "@/components/site-footer"
@@ -10,8 +9,6 @@ import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from '@/components/ui/Toaster'
 import  SessionProvider from  '@/components/Providers'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
@@ -21,10 +18,10 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "Next.js blog",
-    "React blog",
-    "Tailwind CSS blog",
+    "medium blog",
+    "reedit blog",
     "Developer blog",
-    "Official UI",
+    "technotips app",
   ],
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "black" },

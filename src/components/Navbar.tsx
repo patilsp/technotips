@@ -7,8 +7,7 @@ import { UserAccountNav } from './UserAccountNav'
 import SearchBar from './SearchBar'
 import { EyeNoneIcon } from "@radix-ui/react-icons"
 import { Bell, Users } from 'lucide-react'
-import { MobileNav } from "@/components/mobile-nav"
-import { ModeToggle } from "@/components/mode-toggle"
+// import { ModeToggle } from '@/components/mode-toggle'
 
 import {
   DropdownMenu,
@@ -33,7 +32,7 @@ const Navbar = async () => {
     return (
       <div className='supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full p-1 border-b bg-background/95 backdrop-blur'>
         <div className='px-2 max-w-7xl h-full mx-auto flex items-center justify-between gap-2'>
-          <MobileNav />
+          
           <Link href='/' className='flex gap-2 items-center'>
           <Image 
               src="/images/logo.png"
@@ -43,7 +42,7 @@ const Navbar = async () => {
               className="object-contain"
               />
             {/* <p className='hidden text-zinc-100 text-sm logo-text font-bold md:block text-shadow'>TechnoTips</p> */}
-            <h1 className="hidden md:block text-left logo-text2">TechnoTips</h1>
+            <h1 className="hidden md:block logo-text2 text-left logo-text2">TechnoTips</h1>
           </Link>
         <SearchBar />
         <div className='flex gap-2 items-center'>

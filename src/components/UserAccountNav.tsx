@@ -53,7 +53,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link href='/changeavatar'>Change Avatar
+          <Link href='/forms'>User Profile
           <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem>
