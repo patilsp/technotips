@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/components/ui/Button'
+import { Button } from '@/registry/new-york/ui/button'
 import { Input } from '@/components/ui/Input'
 import { toast } from '@/hooks/use-toast'
 import { useCustomToasts } from '@/hooks/use-custom-toasts'
@@ -33,7 +33,7 @@ const Page = () => {
       if (err instanceof AxiosError) {
         if (err.response?.status === 409) {
           return toast({
-            title: 'Subreddit already exists.',
+            title: 'Community already exists.',
             description: 'Please choose a different name.',
             variant: 'destructive',
           })
@@ -41,7 +41,7 @@ const Page = () => {
 
         if (err.response?.status === 422) {
           return toast({
-            title: 'Invalid subreddit name.',
+            title: 'Invalid Community name.',
             description: 'Please choose a name between 3 and 21 letters.',
             variant: 'destructive',
           })
@@ -54,7 +54,7 @@ const Page = () => {
 
       toast({
         title: 'There was an error.',
-        description: 'Could not create subreddit.',
+        description: 'Could not create Community.',
         variant: 'destructive',
       })
     },
@@ -64,7 +64,7 @@ const Page = () => {
   })
 
   return (
-    <div className='flex items-center h-full max-w-3xl mx-auto mt-4'>
+    <div className='flex items-center h-full max-w-3xl mx-auto mt-4 p-4'>
       <div className='relative bg-white dark:bg-slate-900 w-full h-fit p-4 rounded-lg space-y-6 shadow-sm border'>
         <div className='flex justify-between items-center'>
           <h1 className='h1 text-xl font-semibold'>Create a Community</h1>
@@ -95,7 +95,7 @@ const Page = () => {
               <CardTitle>Community type</CardTitle>
             </div>
             <CardDescription>
-            A Community in Reddit is a subreddit, which is a dedicated section where users discuss specific topics. Each subreddit has its own rules and guidelines moderated by volunteers.
+            A Community in TechnoTips is a Community, which is a dedicated section where users discuss specific topics. Each Community has its own rules and guidelines moderated by volunteers.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4 pt-4">

@@ -44,26 +44,32 @@ export default function RootLayout({ children, authModal }: RootLayoutProps) {
   return (
     <>
     <SessionProvider>
+    
       <html lang="en" suppressHydrationWarning>
-        
+      
       <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
+            "min-h-screen  font-sans antialiased",
             fontSans.variable
           )}
         >
+        <div className='main'>
+          <div className='gradient' />
+        </div>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              {authModal}
-                <div className="flex-1">{children}</div>
-              <SiteFooter />
-            </div>
+             <main className='app'>
+              <div className="relative flex min-h-screen flex-col">
+                <SiteHeader />
+                {authModal}
+                  <div className="flex-1">{children}</div>
+                <SiteFooter />
+              </div>
+            </main>
             <Toaster />
             <TailwindIndicator />
           </ThemeProvider>

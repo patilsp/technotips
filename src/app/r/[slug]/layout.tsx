@@ -10,8 +10,8 @@ import { notFound } from 'next/navigation'
 import { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: 'CoummunityHub',
-  description: "CoummunityHub is a network of communities where people can dive into their interests, hobbies and passions. There's a community for whatever you're interested in",
+  title: 'TechnoTips',
+  description: "TechnoTips is a network of communities where people can dive into their interests, hobbies and passions. There's a community for whatever you're interested in",
 }
 
 const Layout = async ({
