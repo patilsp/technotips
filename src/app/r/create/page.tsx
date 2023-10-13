@@ -10,6 +10,11 @@ import axios, { AxiosError } from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
+
+import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import { Switch } from "@/components/ui/switch"
+
 const Page = () => {
   const router = useRouter()
   const [input, setInput] = useState<string>('')
@@ -59,7 +64,7 @@ const Page = () => {
   })
 
   return (
-    <div className='container flex items-center h-full max-w-3xl mx-auto mt-10'>
+    <div className='flex items-center h-full max-w-3xl mx-auto '>
       <div className='relative bg-white dark:bg-slate-900 w-full h-fit p-4 rounded-lg space-y-6 border'>
         <div className='flex justify-between items-center'>
           <h1 className='h1 text-xl font-semibold'>Create a Community</h1>
@@ -83,6 +88,48 @@ const Page = () => {
             />
           </div>
         </div>
+
+        <Card key="1" className="w-full">
+          <CardHeader className=" border-dark-gray-300 pb-4">
+            <div className="flex items-center">             
+              <CardTitle>Community type</CardTitle>
+            </div>
+            <CardDescription>
+            A Community in Reddit is a subreddit, which is a dedicated section where users discuss specific topics. Each subreddit has its own rules and guidelines moderated by volunteers.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4 pt-4">
+            <div className="flex justify-between items-start space-y-2">
+              <div>
+                <Label htmlFor="essential">Public</Label>
+                <p className="text-dark-gray-500 text-sm">
+                  Anyone can view, post, and comment to this community
+                </p>
+              </div>
+              <Switch className="ml-auto" id="essential" />
+            </div>
+            <div className="flex justify-between items-start space-y-2">
+              <div>
+                <Label htmlFor="analytics">Restricted</Label>
+                <p className="text-dark-gray-500 text-sm">
+                  Anyone can view this community, but only approved users can post
+                </p>
+              </div>
+              <Switch className="ml-auto" id="analytics" />
+            </div>
+            <div className="flex justify-between items-start space-y-2">
+              <div>
+                <Label htmlFor="marketing">Private</Label>
+                <p className="text-dark-gray-500 text-sm">
+                  Only approved users can view and submit to this community
+                </p>
+              </div>
+              <Switch className="ml-auto" id="marketing" />
+            </div>
+          </CardContent>
+          <div className="border-t border-dark-gray-300 mt-4" />
+          
+        </Card>
 
         <div className='flex justify-end gap-4'>
           <Button
