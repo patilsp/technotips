@@ -1,6 +1,6 @@
 import CustomFeed from '@/components/homepage/CustomFeed'
 import GeneralFeed from '@/components/homepage/GeneralFeed'
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from '@/registry/new-york/ui/button'
 import { getAuthSession } from '@/lib/auth'
 import { Home as HomeIcon } from 'lucide-react'
 import Link from 'next/link'
