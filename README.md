@@ -17,7 +17,8 @@ Built with the Next.js App Router, TypeScript & Tailwind
  - Full comment functionality with nested replies
  - ... and much more
 
-![image](https://github.com/patilsp/communityHub/assets/35653819/1064d98d-0bf6-4aec-ac3e-00ab4440c291)
+![image](https://github.com/patilsp/technotips/assets/35653819/98d0faab-36f9-4fc4-9032-083c5dcb9778)
+
 
 
 
