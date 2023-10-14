@@ -1,6 +1,6 @@
 import CustomFeed from '@/components/homepage/CustomFeed'
 import GeneralFeed from '@/components/homepage/GeneralFeed'
-import { Button } from '@/registry/new-york/ui/button'
+import { buttonVariants } from '@/components/ui/Button'
 import { getAuthSession } from '@/lib/auth'
 import { Home as HomeIcon } from 'lucide-react'
 import Link from 'next/link'
@@ -20,7 +20,7 @@ export default async function Home() {
         {session ? <CustomFeed /> : <GeneralFeed />}
 
         {/* subreddit info */}
-        <div className='overflow-hidden h-fit rounded-lg border border-gray-200 shadow order-first md:order-last'>
+        <div className='overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last'>
           <div className='bg-green-300 px-6 py-2'>
             <p className='font-semibold py-3 flex items-center gap-1.5'>
               <HomeIcon className='h-4 w-4' />
@@ -36,7 +36,7 @@ export default async function Home() {
             </div>
 
             <Link
-              className={Button({
+              className={buttonVariants({
                 className: 'w-full mt-4 mb-6',
               })}
               href={`/r/create`}>
