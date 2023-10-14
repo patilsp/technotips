@@ -1,6 +1,6 @@
 import CustomFeed from '@/components/homepage/CustomFeed'
 import GeneralFeed from '@/components/homepage/GeneralFeed'
-import { buttonVariants } from '@/components/ui/Button'
+import { Button } from "@/registry/new-york/ui/button"
 import { getAuthSession } from '@/lib/auth'
 import { Home as HomeIcon } from 'lucide-react'
 import Link from 'next/link'
@@ -36,7 +36,7 @@ export default async function Home() {
             </div>
 
             <Link
-              className={buttonVariants({
+              className={Button({
                 className: 'w-full mt-4 mb-6',
               })}
               href={`/r/create`}>
