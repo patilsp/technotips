@@ -123,9 +123,10 @@ const Post: FC<PostProps> = ({
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
-              align="end"
-              className="w-[230px]"
-              forceMount
+               align="end"
+               alignOffset={-5}
+               className="w-[250px]"
+               forceMount
             >
               <DropdownMenuLabel>Share</DropdownMenuLabel>
               <DropdownMenuSeparator />

@@ -5,6 +5,8 @@ import { getAuthSession } from '@/lib/auth'
 import { Home as HomeIcon } from 'lucide-react'
 import Link from 'next/link'
 
+import AllCategory from '@/components/Category'
+
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 
@@ -14,6 +16,9 @@ export default async function Home() {
   return (
     <>
     <div className="p-4 max-w-7xl mx-auto w-full h-full">
+
+      
+
       <h1 className='h1 font-bold text-3xl md:text-4xl'>Your feed</h1>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-6'>
         {/* @ts-expect-error server component */}
@@ -43,6 +48,14 @@ export default async function Home() {
               Create Community
             </Link>
           </dl>
+          <div className="h-80 p-2 mb-2 ">
+            <div className='px-2'>
+              <h3 className='font-semibold py-2 flex items-center gap-1.5'>              
+                Trending Communities
+              </h3>
+            </div>
+            <AllCategory />
+          </div>
         </div>
       </div>
     </div>
