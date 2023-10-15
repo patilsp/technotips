@@ -20,6 +20,10 @@ Built with the Next.js App Router, TypeScript & Tailwind
 ![image](https://github.com/patilsp/technotips/assets/35653819/98d0faab-36f9-4fc4-9032-083c5dcb9778)
 
 
+![image](https://github.com/patilsp/technotips/assets/35653819/56ce77ed-68e8-4fe5-b9cf-6a0500fb4bb1)
+
+
+
 
 
 
