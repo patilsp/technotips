@@ -7,9 +7,19 @@ import { redis } from '@/lib/redis'
 import { formatTimeToNow } from '@/lib/utils'
 import { CachedPost } from '@/types/redis'
 import { Post, User, Vote } from '@prisma/client'
-import { ArrowBigDown, ArrowBigUp, Loader2 } from 'lucide-react'
+import { ArrowBigDown, ArrowBigUp, Loader2, Share } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
+import Link from 'next/link'
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/registry/new-york/ui/dropdown-menu'
 
 interface SubRedditPostPageProps {
   params: {
@@ -43,8 +53,26 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
 
   return (
     <div>
-      <div className='h-full flex flex-col sm:flex-row items-center sm:items-start justify-between'>
-        <Suspense fallback={<PostVoteShell />}>
+      <div className='h-full flex flex-col sm:flex-row items-center sm:items-start justify-between'>       
+
+        <div className='sm:w-0 w-full flex-1 bg-white p-4 rounded-sm border'>
+        <div className="flex justify-between w-full">
+          <p className='max-h-40 truncate text-xs text-gray-500'>
+            Posted by  {post?.author.username ?? cachedPost.authorUsername}{' '}</p>
+            <span className="tag">{formatTimeToNow(new Date(post?.createdAt ?? cachedPost.createdAt))}</span>
+            
+          </div>
+          
+
+          <h1 className='text-xl font-semibold py-2 leading-6 text-gray-900'>
+            {post?.title ?? cachedPost.title}
+          </h1>
+          
+          
+          <EditorOutput content={post?.content ?? cachedPost.content} />
+          <hr className="w-full h-px my-6"></hr>
+          <div className="flex justify-start gap-4 w-full mt-4">
+          <Suspense fallback={<PostVoteShell />}>
           {/* @ts-expect-error server component */}
           <PostVoteServer
             postId={post?.id ?? cachedPost.id}
@@ -61,20 +89,14 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
           />
         </Suspense>
 
-        <div className='sm:w-0 w-full flex-1 bg-white p-4 rounded-sm border'>
-        <div className="flex justify-between w-full">
-          <p className='max-h-40 truncate text-xs text-gray-500'>
-            Posted by {post?.author.username ?? cachedPost.authorUsername}{' '}</p>
-            <span className="tag">{formatTimeToNow(new Date(post?.createdAt ?? cachedPost.createdAt))}</span>
-            
-          </div>
+        <Link
+          href='#'
+          className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-2'>
+          <Share className='h-4 w-4' /> Share
+        </Link>
+
+        </div>
           
-
-          <h1 className='text-xl font-semibold py-2 leading-6 text-gray-900'>
-            {post?.title ?? cachedPost.title}
-          </h1>
-
-          <EditorOutput content={post?.content ?? cachedPost.content} />
           <Suspense
             fallback={
               <Loader2 className='h-5 w-5 animate-spin text-zinc-500' />

@@ -43,12 +43,7 @@ const Post: FC<PostProps> = ({
 
   return (
     <div className='rounded-md bg-white shadow border dark:bg-slate-900'>
-      <div className='px-3 py-2 flex justify-between'>
-        <PostVoteClient
-          postId={post.id}
-          initialVotesAmt={_votesAmt}
-          initialVote={_currentVote?.type}
-        />
+      <div className='px-3 py-2 flex justify-between'>      
 
         <div className='w-0 flex-1'>
           <div className='max-h-40 mt-1 text-xs text-slate-700'>
@@ -99,15 +94,22 @@ const Post: FC<PostProps> = ({
         </div>
       </div>
 
-      <div className='flex justify-between bg-gray-100 dark:bg-slate-800 m-2 gap-2 rounded-md z-20 text-sm px-4 py-4 sm:px-6'>
+      <div className='flex justify-start gap-4 py-2 px-2 ml-2 mt-4'>
+        
+       <PostVoteClient
+          postId={post.id}
+          initialVotesAmt={_votesAmt}
+          initialVote={_currentVote?.type}
+        />
+        
         <Link
           href={`/r/${subredditName}/post/${post.id}`}
-          className='w-fit flex items-center gap-2'>
-          <MessageSquare className='h-4 w-4' /> {commentAmt} comments
+          className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-2'>
+          <MessageSquare className='h-4 w-4 ' /> {commentAmt}
         </Link>
         <Link
           href={`/r/${subredditName}/post/${post.id}`}
-          className='w-fit flex items-center gap-2'>
+          className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-2'>
           <Share className='h-4 w-4' /> Share
         </Link>
        
