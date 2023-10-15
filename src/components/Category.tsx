@@ -65,7 +65,7 @@ const Category: FC<CategoryProps> = ({}) => {
                     value={subreddit.name}>
                     <Users className='mr-2 h-5 w-5' />
                     <div className="flex justify-between w-full items-center">
-                    <a className="p-1" href={`/r/${subreddit.name}`}>{subreddit.name}</a>
+                    <a className="p-1 font-semibold" href={`/r/${subreddit.name}`}>{subreddit.name}</a>
 
                     <p className="active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900 bg-primary text-zinc-100 hover:bg-primary h-10 cursor-pointer px-3">Subscribe</p>
                     </div>
