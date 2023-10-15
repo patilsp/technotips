@@ -2,7 +2,7 @@
 
 import { formatTimeToNow } from '@/lib/utils'
 import { Post, User, Vote } from '@prisma/client'
-import { MessageSquare, Share,  MoreHorizontal, Plus } from 'lucide-react'
+import { MessageSquare, Share,  MoreHorizontal, Plus, Forward, Bookmark, Link2 } from 'lucide-react'
 import Link from 'next/link'
 import { FC, useRef } from 'react'
 import EditorOutput from './EditorOutput'
@@ -104,21 +104,54 @@ const Post: FC<PostProps> = ({
         
         <Link
           href={`/r/${subredditName}/post/${post.id}`}
-          className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-2'>
+          className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-3'>
           <MessageSquare className='h-4 w-4 ' /> {commentAmt}
         </Link>
-        <Link
+        {/* <Link
           href={`/r/${subredditName}/post/${post.id}`}
-          className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-2'>
-          <Share className='h-4 w-4' /> Share
-        </Link>
+          className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-3'>
+          <Share className='h-4 w-4' /> 0
+        </Link> */}
+
+        <div className="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
+       
+         
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="secondary" className="px-3 shadow-none">
+                <Share className='h-4 w-4' /> 
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="end"
+              className="w-[230px]"
+              forceMount
+            >
+              <DropdownMenuLabel>Share</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuCheckboxItem>
+                  <Forward className='h-5 w-5 mr-2' /> Share Post Via.. 
+              </DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem>
+               <Bookmark className='h-5 w-5 mr-2' /> Save To Bookmarks 
+
+              </DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem>
+                <Link2 className='h-5 w-5 mr-2' /> Copy link to post
+              </DropdownMenuCheckboxItem>
+             
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+
+
        
         <div className="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
        
          
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="secondary" className="px-2 shadow-none">
+              <Button variant="secondary" className="px-3 shadow-none">
                 <MoreHorizontal className='h-4 w-4' /> 
               </Button>
             </DropdownMenuTrigger>
