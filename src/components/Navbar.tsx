@@ -31,7 +31,7 @@ const Navbar = async () => {
 
     return (
       <div className=' sticky top-0 z-50 w-full p-1 border-b  backdrop-blur'>
-        <div className='px-2 max-w-7xl h-full mx-auto flex items-center justify-between gap-2'>
+        <div className='px-2  h-full mx-auto flex items-center justify-between gap-2'>
           
           <Link href='/' className='flex gap-2 items-center'>
           <Image 

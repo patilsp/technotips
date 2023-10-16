@@ -70,7 +70,9 @@
 body {
   font-family: Inter;
 }
-
+.z-1000{
+  z-index: 999;
+}
 .main {
   width: 100vw;
   min-height: 100vh;
