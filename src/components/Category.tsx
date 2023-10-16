@@ -36,17 +36,20 @@ const Category: FC<CategoryProps> = ({}) => {
             key={subreddit.id}
             className="border-b border-gray-200 hover:bg-gray-200 flex justify-between p-2"
           >
+          
             <div className="flex items-center justify-between w-full ">
-            <div className="flex items-center">
                 <Users className='mr-2 h-5 w-5' />
-                <a className="p-1 font-semibold" href={`/r/${subreddit.name}`}>
-                  {subreddit.name} 
+                <a className="p-1 font-semibold flex items-center justify-between w-full" href={`/r/${subreddit.name}`}>
+                 
+                      <p className="text-slate-900">{subreddit.name} </p>
+                      <p className="btn-primary w-[100px] float-right">
+                        Subscribe
+                      </p>
+                 
                 </a>
+                
             </div>
-              <p className="follow-button">
-                Subscribe
-              </p>
-            </div>
+   
            
           </li>
         ))}
