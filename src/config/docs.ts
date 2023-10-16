@@ -17,12 +17,23 @@ export const docsConfig: DocsConfig = {
       href: "/",
     },
     {
-      title: "Dashboard",
-      href: "/dashboard",
+      title: "Communities",
+      href: "/Communities",
     },
     {
-      title: "Profile",
-      href: "/profile",
+      title: "Popular",
+      href: "/Popular",
+    },
+    {
+      title: "Most Upoveted",
+      href: "/",
+    },{
+      title: "Bookmarks",
+      href: "/",
+    },
+     {
+      title: "Settings",
+      href: "/forms",
     },
    
     

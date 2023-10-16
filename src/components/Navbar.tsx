@@ -7,7 +7,8 @@ import { UserAccountNav } from './UserAccountNav'
 import SearchBar from './SearchBar'
 import { EyeNoneIcon } from "@radix-ui/react-icons"
 import { Bell, Users } from 'lucide-react'
-// import { ModeToggle } from '@/components/mode-toggle'
+import { MobileNav } from "@/components/mobile-nav"
+import { ModeToggle } from "@/components/mode-toggle"
 
 import {
   DropdownMenu,
@@ -30,10 +31,13 @@ const Navbar = async () => {
 
 
     return (
-      <div className=' sticky top-0 z-50 w-full p-1 border-b  backdrop-blur'>
-        <div className='px-2  h-full mx-auto flex items-center justify-between gap-2'>
-          
-          <Link href='/' className='flex gap-2 items-center'>
+
+   
+      <div className='sticky top-0 z-50 w-full p-1 border-b  backdrop-blur'>
+ 
+      <div className="py-1 flex h-14 items-center">
+        <MobileNav />
+        <Link href='/' className='flex gap-2 items-center'>
           <Image 
               src="/images/logo.png"
               alt="logo"
@@ -41,10 +45,16 @@ const Navbar = async () => {
               height={40}
               className="object-contain"
               />
-            {/* <p className='hidden text-zinc-100 text-sm logo-text font-bold md:block text-shadow'>TechnoTips</p> */}
+
             <h1 className="hidden md:block logo-text2 text-left logo-text2">TechnoTips</h1>
           </Link>
-        <SearchBar />
+       
+        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+          <div className="w-full flex-1 md:w-auto md:flex-none">
+          <SearchBar />
+          </div>
+            
+       
         <div className='flex gap-2 items-center'>
           {/* <ModeToggle />  */}
             <div className="w-full flex-1 md:w-auto md:flex-none">
@@ -106,18 +116,16 @@ const Navbar = async () => {
               </Link>
             )}
             <div>
-              {/* <button className="btn-pro hidden md:block">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
-                      <path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path>
-                  </svg>
-                  Unlock Pro
-              </button> */}
+
 
               </div>
           </div>
         
         </div>
+         
+        </div>
       </div>
+
       
     )
   }

@@ -5,19 +5,26 @@ export const siteConfig = {
   description:
     "TechnoTips is a network of communities where people can dive into their interests, hobbies and passions. There's a community for whatever you're interested in",
   mainNav: [
-    {
-      title: "Home",
-      href: "/",
-    },
+  
     {
       title: "My Feeds",
       href: "/",
     },
     {
-      title: "My Profile",
-      href: "/profile",
+      title: "Communities",
+      href: "/Communities",
     },
-   
+    {
+      title: "Popular",
+      href: "/Popular",
+    },
+    {
+      title: "Most Upoveted",
+      href: "/",
+    },{
+      title: "Bookmarks",
+      href: "/",
+    },
      {
       title: "Settings",
       href: "/forms",
