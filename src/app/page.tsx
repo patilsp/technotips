@@ -56,7 +56,7 @@ export default async function Home() {
         Create Community
       </Link>
     </dl>
-    <div className="h-80 p-2 mb-2 ">
+    <div className="h-80 p-2 mb-2 hidden md:block">
       <div className='px-2'>
         <h3 className='font-semibold py-2 flex items-center gap-1.5'>              
           Trending Communities

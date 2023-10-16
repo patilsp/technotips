@@ -528,3 +528,74 @@ h1{
   transform: scale(1.15);
   transform-origin: top;
 }
+
+
+
+.toggle {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition-duration: .5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(176, 92, 255);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: .8s;
+}
+
+#bar1,#bar3 {
+  width: 70%;
+}
+
+.glassIcon{
+  padding: 5px;
+  font-size: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background: #ccc;
+  box-shadow: 0 20px 30px rgba(255, 255, 255 , 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right-color: rgba(255, 255, 255 , 0.1);
+  border-bottom-color: rgba(255, 255, 255 , 0.1);
+}
+
+.glassIcon,
+.glassIcon * {
+  box-sizing: border-box;
+  transition: 200ms;
+}
+
+.glassIcon:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50%;
+  height: 100%;
+  /* background: rgba(255, 255, 255 , 0.2); */
+  filter: blur(0px);
+  transition: 400ms;
+  transform: skew(45deg) translateX(100%);
+}
+
+
+.glassIcon:hover{
+  transform: translateY(-4px);
+}
+.glassIcon > * {
+  opacity: 0.8;
+}

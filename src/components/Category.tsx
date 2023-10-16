@@ -2,8 +2,8 @@
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
-import { usePathname, useRouter } from 'next/navigation'
-import { FC,  useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { FC, useRef } from 'react'
 
 import {
   Command,
@@ -12,20 +12,15 @@ import {
   CommandItem,
   CommandList,
 } from '@/components/ui/Command'
-import { useOnClickOutside } from '@/hooks/use-on-click-outside'
 import { Users } from 'lucide-react'
 
 interface CategoryProps {}
 
 const Category: FC<CategoryProps> = ({}) => {
-  const [input, setInput] = useState<string>('')
-  const pathname = usePathname()
+
   const commandRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
 
-  useOnClickOutside(commandRef, () => {
-    setInput('')
-  })
 
   const {    
     data: queryResults,
@@ -38,20 +33,14 @@ const Category: FC<CategoryProps> = ({}) => {
     }
   })
 
-  useEffect(() => {
-    setInput('')
-  }, [pathname])
-
   return (
 
     <div>
         <Command
         ref={commandRef}
         className='relative rounded-lg border max-w-sm z-50 overflow-visible'>
-            <CommandList className='absolute bg-white top-full inset-x-0 shadow rounded-md '>
-            {isFetched && <CommandEmpty>No results found.</CommandEmpty>}
-            {(queryResults?.length ?? 0) > 0 ? (
-                <CommandGroup>
+            <div className='absolute bg-white top-full inset-x-0 shadow rounded-md '>
+            
                 {queryResults?.map((subreddit) => (
                     <CommandItem
                     onSelect={(e) => {
@@ -68,9 +57,8 @@ const Category: FC<CategoryProps> = ({}) => {
                     </div>
                     </CommandItem>
                 ))}
-                </CommandGroup>
-            ) : null}
-            </CommandList>
+            
+            </div>
     
         </Command>
     </div>

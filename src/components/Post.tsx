@@ -2,7 +2,8 @@
 
 import { formatTimeToNow } from '@/lib/utils'
 import { Post, User, Vote } from '@prisma/client'
-import { MessageSquare, Share,  MoreHorizontal, Plus, Forward, Bookmark, Link2 } from 'lucide-react'
+import { MessageSquare, Share,  MoreHorizontal, Plus, Forward, Bookmark, Link2, Youtube, Github, X, Facebook, Instagram  } from 'lucide-react'
+
 import Link from 'next/link'
 import { FC, useRef } from 'react'
 import EditorOutput from './EditorOutput'
@@ -107,44 +108,47 @@ const Post: FC<PostProps> = ({
           className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-3'>
           <MessageSquare className='h-4 w-4 ' /> {commentAmt}
         </Link>
-        {/* <Link
-          href={`/r/${subredditName}/post/${post.id}`}
-          className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-3'>
-          <Share className='h-4 w-4' /> 0
-        </Link> */}
+     
+
 
         <div className="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
        
          
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="secondary" className="px-3 shadow-none">
-                <Share className='h-4 w-4' /> 
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-               align="end"
-               alignOffset={-5}
-               className="w-[250px]"
-               forceMount
-            >
-              <DropdownMenuLabel>Share</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuCheckboxItem>
-                  <Forward className='h-5 w-5 mr-2' /> Share Post Via.. 
-              </DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem>
-               <Bookmark className='h-5 w-5 mr-2' /> Save To Bookmarks 
+       <DropdownMenu>
+         <DropdownMenuTrigger asChild>
+           <Button variant="secondary" className="px-3 shadow-none">
+             <Forward className='h-4 w-4' /> 
+           </Button>
+         </DropdownMenuTrigger>
+         <DropdownMenuContent
+           align="center"
+           alignOffset={-5}
+           className="w-[250px]"
+           forceMount
+         >
+          
+           <DropdownMenuItem>
+             <Share className="mr-2 h-4 w-4" />Share Post Via..
+           </DropdownMenuItem>
+           <DropdownMenuItem>
+             <Bookmark className="mr-2 h-4 w-4" />Save To Bookmarks 
+           </DropdownMenuItem>
+           <DropdownMenuItem>
+             <Link2 className="mr-2 h-4 w-4" />Copy link to post
+           </DropdownMenuItem>
+           <DropdownMenuSeparator />
+           <div className="mb-2 flex w-full justify-center gap-2">
+            <div className="glassIcon"><Facebook className=""></Facebook></div>
+            <div className="glassIcon"><Instagram className=""></Instagram></div>
+            <div className="glassIcon"><Youtube className=""></Youtube></div>
+            <div className="glassIcon"><X className=""></X></div>
+            <div className="glassIcon"><Github className=""></Github></div>
 
-              </DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem>
-                <Link2 className='h-5 w-5 mr-2' /> Copy link to post
-              </DropdownMenuCheckboxItem>
-             
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
 
+          </div>
+         </DropdownMenuContent>
+       </DropdownMenu>
+     </div>
 
        
         <div className="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">

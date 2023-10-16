@@ -24,8 +24,6 @@ import {
   CardTitle,
 } from '@/components/ui/Card'
 
-
-
 const Navbar = async () => {
   const session = await getServerSession(authOptions)
 
@@ -33,9 +31,8 @@ const Navbar = async () => {
     return (
 
    
-      <div className='sticky top-0 z-50 w-full p-1 border-b  backdrop-blur'>
- 
-      <div className="py-1 flex h-14 items-center">
+      <div className='sticky top-0 z-50 w-full p-1 border-b  backdrop-blur'> 
+      <div className="py-2 flex h-14 items-center">
         <MobileNav />
         <Link href='/' className='flex gap-2 items-center'>
           <Image 
@@ -64,7 +61,7 @@ const Navbar = async () => {
                     <Bell className="bell" size={24}  />
                   </button>
                 </DropdownMenuTrigger>      
-                <DropdownMenuContent className="w-100 p-4" align="end" forceMount>
+                <DropdownMenuContent className="w-100" align="end" forceMount>
                 <Card className="border-none">
                   <CardHeader className="pb-3">
                     <CardTitle>Notifications</CardTitle>
