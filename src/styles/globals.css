@@ -599,3 +599,21 @@ h1{
 .glassIcon > * {
   opacity: 0.8;
 }
+
+.follow-button {
+  color: #f7f7f7;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #fa6018;
+  border: 1px solid #f39c12;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: 0px 4px 0px #d35400;
+  transition: all .1s;
+ }
+ 
+ .follow-button:active {
+  box-shadow: 0px 2px 0px #d35400;
+  position: relative;
+  top: 2px;
+ }

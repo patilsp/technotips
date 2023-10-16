@@ -43,7 +43,7 @@ const Category: FC<CategoryProps> = ({}) => {
                   {subreddit.name} 
                 </a>
             </div>
-              <p className="float-right active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900 bg-primary text-zinc-100 hover:bg-primary h-8 cursor-pointer px-2">
+              <p className="follow-button">
                 Subscribe
               </p>
             </div>

@@ -25,7 +25,7 @@ export const docsConfig: DocsConfig = {
       href: "/Popular",
     },
     {
-      title: "Most Upoveted",
+      title: "Most Upvote",
       href: "/",
     },{
       title: "Bookmarks",
