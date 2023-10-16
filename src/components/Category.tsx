@@ -1,30 +1,16 @@
 'use client'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-
-import { useRouter } from 'next/navigation'
-import { FC, useRef } from 'react'
-
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandList,
-} from '@/components/ui/Command'
+import { FC } from 'react'
 import { Users } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 interface CategoryProps {}
 
 const Category: FC<CategoryProps> = ({}) => {
 
-  const commandRef = useRef<HTMLDivElement>(null)
-  const router = useRouter()
-
-
   const {    
     data: queryResults,
-    isFetched,
   } = useQuery({
     queryFn: async () => {
       
@@ -34,34 +20,41 @@ const Category: FC<CategoryProps> = ({}) => {
   })
 
   return (
-
-    <div>
-        <Command
-        ref={commandRef}
-        className='relative rounded-lg border max-w-sm z-50 overflow-visible'>
-            <div className='absolute bg-white top-full inset-x-0 shadow rounded-md '>
-            
-                {queryResults?.map((subreddit) => (
-                    <CommandItem
-                    onSelect={(e) => {
-                        router.push(`/r/${e}`)
-                        router.refresh()
-                    }}
-                    key={subreddit.id}
-                    value={subreddit.name}>
-                    <Users className='mr-2 h-5 w-5' />
-                    <div className="flex justify-between w-full items-center">
-                    <a className="p-1 font-semibold" href={`/r/${subreddit.name}`}>{subreddit.name}</a>
-
-                    <p className="active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900 bg-primary text-zinc-100 hover:bg-primary h-10 cursor-pointer px-3">Subscribe</p>
-                    </div>
-                    </CommandItem>
-                ))}
-            
-            </div>
     
-        </Command>
-    </div>
+    
+    <div className="max-w-sm rounded-lg border shadow bg-white h-72 scroll-p-0 flex-none min-w-full px-4 sm:px-6 md:px-0 overflow-hidden lg:overflow-auto scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded lg:supports-scrollbars:pr-2 lg:max-h-96">
+    <motion.div
+        initial={{ opacity: 0, y: 50 }} 
+        animate={{ opacity: 1, y: 0 }}    
+        transition={{ duration: 1, delay: 1 }} 
+      >
+
+    {queryResults && queryResults.length > 0 ? (
+      <ul>
+        {queryResults.map((subreddit) => (
+          <li
+            key={subreddit.id}
+            className="border-b border-gray-200 hover:bg-gray-200 flex justify-between p-2"
+          >
+            <div className="flex items-center justify-between w-full ">
+            <div className="flex items-center">
+                <Users className='mr-2 h-5 w-5' />
+                <a className="p-1 font-semibold" href={`/r/${subreddit.name}`}>
+                  {subreddit.name} 
+                </a>
+            </div>
+              <p className="float-right active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900 bg-primary text-zinc-100 hover:bg-primary h-8 cursor-pointer px-2">
+                Subscribe
+              </p>
+            </div>
+           
+          </li>
+        ))}
+      </ul>
+    ) : null}
+
+    </motion.div>
+  </div>
   )
 }
 

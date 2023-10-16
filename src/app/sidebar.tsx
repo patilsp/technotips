@@ -39,11 +39,19 @@ const sidebar = () => {
                         <Command className="w-4 h-4 " />
                         <span className="ml-3">Reading History</span>
                     </Link>
+                    <Link href="/Popular" className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white  dark:hover:bg-gray-700 group text-sm/[14px]">
+                        <Command className="w-4 h-4 " />
+                        <span className="ml-3">Settings</span>
+                    </Link>
+                    <Link href="/Popular" className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white  dark:hover:bg-gray-700 group text-sm/[14px]">
+                        <Command className="w-4 h-4 " />
+                        <span className="ml-3">Help</span>
+                    </Link>
                     
-                    <Link href="/Popular" className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 dark:text-white  dark:hover:bg-gray-700 group text-sm/[14px]">
+                    {/* <Link href="/Popular" className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 dark:text-white  dark:hover:bg-gray-700 group text-sm/[14px]">
                         <LogIn className="w-4 h-4 " />
                         <span className="ml-3">Sign In</span>
-                    </Link>
+                    </Link> */}
                   
                 </ul>
             </div>
