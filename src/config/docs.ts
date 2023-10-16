@@ -31,16 +31,12 @@ export const docsConfig: DocsConfig = {
       title: "Bookmarks",
       href: "/",
     },
-     {
-      title: "Settings",
-      href: "/forms",
-    },
-   
+    
     
   ],
   sidebarNav: [
     {
-      title: "General",
+      
       items: [
         {
           title: "Help",

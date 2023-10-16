@@ -27,7 +27,7 @@ export function MobileNav() {
           {/* <ViewVerticalIcon className="h-5 w-5" />
           <span className="sr-only">Toggle Menu</span> */}
         
-          <label className="toggle">
+          <label className="toggle ml-1">
               <div className="bars" id="bar1"></div>
               <div className="bars" id="bar2"></div>
               <div className="bars" id="bar3"></div>
@@ -44,7 +44,7 @@ export function MobileNav() {
          
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
-        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10">
+        <ScrollArea className="my-5 h-[calc(100vh-8rem)] pb-10 ml-2">
           <div className="flex flex-col space-y-3">
             {docsConfig.mainNav?.map(
               (item) =>
