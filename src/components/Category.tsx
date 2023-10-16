@@ -1,17 +1,14 @@
 'use client'
-
-import { Prisma, Subreddit } from '@prisma/client'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import debounce from 'lodash.debounce'
+
 import { usePathname, useRouter } from 'next/navigation'
-import { FC, useCallback, useEffect, useRef, useState } from 'react'
+import { FC,  useEffect, useRef, useState } from 'react'
 
 import {
   Command,
   CommandEmpty,
   CommandGroup,
-  CommandInput,
   CommandItem,
   CommandList,
 } from '@/components/ui/Command'

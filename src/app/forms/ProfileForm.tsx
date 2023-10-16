@@ -25,7 +25,6 @@ import {
   SelectValue,
 } from "@/registry/new-york/ui/select"
 import { Textarea } from "@/registry/new-york/ui/textarea"
-import toast from "react-hot-toast";
 
 const profileFormSchema = z.object({
   username: z

@@ -18,7 +18,6 @@ import {
 } from "@/registry/new-york/ui/form"
 import { RadioGroup, RadioGroupItem } from "@/registry/new-york/ui/radio-group"
 import { Switch } from "@/registry/new-york/ui/switch"
-import { toast } from 'react-hot-toast'
 
 const notificationsFormSchema = z.object({
   type: z.enum(["all", "mentions", "none"], {

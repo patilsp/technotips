@@ -11,15 +11,6 @@ import { ArrowBigDown, ArrowBigUp, Loader2, Share } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 import Link from 'next/link'
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/registry/new-york/ui/dropdown-menu'
 
 interface SubRedditPostPageProps {
   params: {

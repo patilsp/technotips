@@ -27,7 +27,7 @@ const GeneralFeed = () => {
       setPosts(fetchedPosts)
     } catch (error) {
       // Handle error, such as logging or displaying an error message
-      console.error('Error fetching posts:', error)
+      error('Error fetching posts:', error)
     }
   }
 

@@ -1,7 +1,6 @@
 'use client'
-import react from 'next/react'
+
 import Link from 'next/link'
-import Image from 'next/image'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/Button'

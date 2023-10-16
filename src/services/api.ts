@@ -10,7 +10,6 @@ import {
 	SubscribeToSubredditPayload,
 } from "@/lib/validators/subreddit";
 import { stringify } from "@/utils/api";
-import config from "@/utils/config";
 import axios, { AxiosError } from "axios";
 
 const AXIOS_CONFIG = {

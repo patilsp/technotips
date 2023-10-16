@@ -15,7 +15,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/registry/new-york/ui/form"
-import { toast } from 'react-hot-toast'
 
 const items = [
   {

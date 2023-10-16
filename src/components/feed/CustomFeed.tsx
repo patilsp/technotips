@@ -1,7 +1,6 @@
 import { getCustomPost } from "@/app/actions/post";
 import React from "react";
 import PostFeed from "../PostFeed";
-import { getAuthSession } from "@/lib/auth";
 
 interface CustomFeedProps {}
 

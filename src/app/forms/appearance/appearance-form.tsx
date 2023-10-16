@@ -17,7 +17,6 @@ import {
   FormMessage,
 } from "@/registry/new-york/ui/form"
 import { RadioGroup, RadioGroupItem } from "@/registry/new-york/ui/radio-group"
-import { toast } from 'react-hot-toast'
 
 const appearanceFormSchema = z.object({
   theme: z.enum(["light", "dark"], {

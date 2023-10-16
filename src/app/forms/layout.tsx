@@ -1,6 +1,4 @@
 import { Metadata } from "next"
-import Image from "next/image"
-
 import { Separator } from "@/registry/new-york/ui/separator"
 import { SidebarNav } from "@/app/forms/components/sidebar-nav"
 
