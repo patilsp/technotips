@@ -46,7 +46,7 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
     <div>
       <div className='h-full flex flex-col sm:flex-row items-center sm:items-start justify-between'>       
 
-        <div className='sm:w-0 w-full flex-1 bg-white p-4 rounded-sm border'>
+        <div className='card'>
         <div className="flex justify-between w-full">
           <p className='max-h-40 truncate text-xs text-gray-500'>
             Posted by  {post?.author.username ?? cachedPost.authorUsername}{' '}</p>

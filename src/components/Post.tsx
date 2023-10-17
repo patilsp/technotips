@@ -24,8 +24,8 @@ type PartialVote = Pick<Vote, 'type'>
 
 interface PostProps {
   post: Post & {
-    author: User
-    votes: Vote[]
+    author: User,
+    votes: Vote[],
   }
   votesAmt: number
   subredditName: string
@@ -43,7 +43,7 @@ const Post: FC<PostProps> = ({
   const pRef = useRef<HTMLParagraphElement>(null)
 
   return (
-    <div className='rounded-md bg-white shadow border dark:bg-slate-900'>
+    <div className='card'>
       <div className='px-3 py-2 flex justify-between'>      
 
         <div className='w-0 flex-1'>
@@ -89,7 +89,7 @@ const Post: FC<PostProps> = ({
             <EditorOutput content={post.content} />
             {pRef.current?.clientHeight === 160 ? (
               // blur bottom if content is too long
-              <div className='absolute bottom-0 left-0 h-24 w-full from-white to-transparent'></div>
+              <div className='  bottom-0 left-0 h-24 w-full from-white to-transparent'></div>
             ) : null}
           </div>
         </div>
@@ -105,13 +105,13 @@ const Post: FC<PostProps> = ({
         
         <Link
           href={`/r/${subredditName}/post/${post.id}`}
-          className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-3'>
+          className='w-fit flex items-center gap-2 hover:bg-green-500 hover:text-white rounded-sm px-3'>
           <MessageSquare className='h-4 w-4 ' /> {commentAmt}
         </Link>
      
 
 
-        <div className="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
+        <div className="flex items-center space-x-1 rounded-md text-secondary-foreground">
        
          
        <DropdownMenu>

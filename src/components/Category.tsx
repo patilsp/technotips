@@ -34,15 +34,15 @@ const Category: FC<CategoryProps> = ({}) => {
         {queryResults.map((subreddit) => (
           <li
             key={subreddit.id}
-            className="border-b border-gray-200 hover:bg-gray-200 flex justify-between p-2"
+            className="border-b border-gray-200 hover:bg-gray-200 flex justify-between px-2 py-1"
           >
           
             <div className="flex items-center justify-between w-full ">
                 <Users className='mr-2 h-5 w-5' />
-                <a className="p-1 font-semibold flex items-center justify-between w-full" href={`/r/${subreddit.name}`}>
+                <a className="font-semibold flex items-center justify-between w-full" href={`/r/${subreddit.name}`}>
                  
                       <p className="text-slate-900">{subreddit.name} </p>
-                      <p className="btn-primary w-[100px] float-right">
+                      <p className="btn-primary h-8 w-[100px] float-right">
                         Subscribe
                       </p>
                  

@@ -19,7 +19,7 @@ export default async function Feed() {
       
           {session ? <CustomFeed /> : <GeneralFeed />}
 
-          <div className='overflow-hidden h-fit rounded-lg border border-gray-300 order-first md:order-last'>
+          <div className='overflow-hidden bg_primary order-first md:order-last'>
               <div className='bg-green-300 px-6 py-2'>
                 <p className='font-semibold py-3 flex items-center gap-1.5'>
                   <HomeIcon className='h-4 w-4' />
