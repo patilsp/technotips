@@ -78,15 +78,16 @@ const PostVoteClient = ({
   })
 
   return (
-    <div className='flex flex-row gap-2 items-center justify-between bg-gray-100 rounded-sm'>
+    <div className='flex flex-row gap-2 items-center justify-between shadow bg-gray-50 rounded-sm'>
       {/* upvote */}
       <Button
         onClick={() => vote('UP')}
         size='sm'
         variant='ghost'
+        className="hover:bg-green-500 hover:text-white"
         aria-label='upvote'>
         <ArrowBigUp
-          className={cn('h-4 w-4 text-zinc-900', {
+          className={cn('h-4 w-4 text-zinc-900 ', {
             'text-emerald-600 fill-emerald-600': currentVote === 'UP',
           })}
         />
@@ -102,7 +103,7 @@ const PostVoteClient = ({
         onClick={() => vote('DOWN')}
         size='sm'
         className={cn({
-          'text-emerald-500': currentVote === 'DOWN',
+          'text-emerald-500 hover:bg-red-500 hover:text-white': currentVote === 'DOWN',
         })}
         variant='ghost'
         aria-label='downvote'>

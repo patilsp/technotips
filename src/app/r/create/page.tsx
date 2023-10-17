@@ -16,14 +16,16 @@ import { Label } from "@/components/ui/Label"
 import { Switch } from "@/components/ui/switch"
 
 const Page = () => {
-  const router = useRouter()
-  const [input, setInput] = useState<string>('')
+  const router = useRouter();
   const { loginToast } = useCustomToasts()
+  const [input, setInput] = useState<string>('');
+  const [description, setDescription] = useState<string>(''); 
 
   const { mutate: createCommunity, isLoading } = useMutation({
     mutationFn: async () => {
       const payload: CreateSubredditPayload = {
         name: input,
+        description: description,
       }
 
       const { data } = await axios.post('/api/subreddit', payload)
@@ -72,6 +74,7 @@ const Page = () => {
 
         <hr className='bg-red-500 h-px' />
 
+       
         <div>
           <h1 className='text-xl font-medium mb-1'>Name</h1>
           <p className='text-zinc-700  pb-2 mb-2'>
@@ -87,6 +90,19 @@ const Page = () => {
               className='pl-6'
             />
           </div>
+
+          <div className="mt-4">
+          <h1 className='text-xl font-medium mb-1'>About Community</h1>          
+          <div className='relative'>            
+            <Input
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className='pl-6'
+            />
+          </div>
+        </div>
+
+
         </div>
 
         <Card key="1" className="w-full">
@@ -144,10 +160,12 @@ const Page = () => {
             onClick={() => createCommunity()}>
             Create Community
           </Button>
+
+
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

@@ -32,9 +32,9 @@ const Navbar = async () => {
 
    
       <div className='sticky top-0 z-50 w-full p-1 border-b  backdrop-blur'> 
-      <div className="py-2 flex h-14 items-center">
+      <div className="px-1 w-full h-full mx-auto flex items-center justify-between gap-1">
         <MobileNav />
-        <Link href='/' className='flex gap-2 items-center'>
+        <Link href='/' className='flex gap-1 items-center'>
           <Image 
               src="/images/logo.png"
               alt="logo"
@@ -46,12 +46,8 @@ const Navbar = async () => {
             <h1 className="hidden md:block logo-text2 text-left logo-text2">TechnoTips</h1>
           </Link>
        
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-          <SearchBar />
-          </div>
-            
-       
+        <SearchBar />
+
         <div className='flex gap-2 items-center'>
           {/* <ModeToggle />  */}
             <div className="w-full flex-1 md:w-auto md:flex-none">
@@ -119,8 +115,7 @@ const Navbar = async () => {
           </div>
         
         </div>
-         
-        </div>
+
       </div>
 
       
