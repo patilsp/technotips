@@ -675,3 +675,7 @@ h1{
   font-weight: 400;
   text-transform: capitalize;
 }
+
+.bg_gradient{
+  background: linear-gradient(112.14deg, #FF8A00 0%, #E96922 100%) !important;
+}

@@ -18,7 +18,7 @@ import {
   DropdownMenuTrigger,
 } from '@/registry/new-york/ui/dropdown-menu'
 import { Button } from '@/registry/new-york/ui/button'
-
+import { motion } from 'framer-motion'
 
 type PartialVote = Pick<Vote, 'type'>
 
@@ -43,6 +43,12 @@ const Post: FC<PostProps> = ({
   const pRef = useRef<HTMLParagraphElement>(null)
 
   return (
+
+    <motion.div
+        initial={{ opacity: 0, y: 50 }} 
+        animate={{ opacity: 1, y: 0 }}    
+        transition={{ duration: 1, delay: 1 }} 
+      >
     <div className='card'>
       <div className='px-3 py-2 flex justify-between'>      
 
@@ -78,7 +84,7 @@ const Post: FC<PostProps> = ({
 
           </div>
           <a href={`/r/${subredditName}/post/${post.id}`}>
-            <h1 className='text-lg font-semibold py-2 leading-6 text-slate-900 dark:text-white'>
+            <h1 className='text-xl font-semibold py-2 leading-6 text-slate-900 dark:text-white'>
               {post.title}
             </h1>
           </a>
@@ -116,7 +122,7 @@ const Post: FC<PostProps> = ({
          
        <DropdownMenu>
          <DropdownMenuTrigger asChild>
-           <Button variant="secondary" className="px-3 shadow bg-gray-50 hover:text-white hover:bg-primary">
+           <Button variant="secondary" className="px-3 shadow bg-gray-50  hover:text-white hover:bg-lime-500">
              <Forward className='h-4 w-4' /> 
            </Button>
          </DropdownMenuTrigger>
@@ -184,6 +190,7 @@ const Post: FC<PostProps> = ({
     
       </div>
     </div>
+    </motion.div>
   )
 }
 export default Post

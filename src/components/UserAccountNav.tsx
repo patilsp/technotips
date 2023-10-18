@@ -27,20 +27,29 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           className='h-8 w-8'
         />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='bg-white' align='end'>
-        <div className='flex items-center justify-start gap-2 p-2'>
+      <DropdownMenuContent className='w-[280px] h-[450px] bg-white' align='end'>
+        <div className='flex items-center justify-start gap-2 p-1'>
           <div className='flex flex-col space-y-1 leading-none'>
-           
-            {user.name && <p className='font-medium'>{user.name}</p>}
-            {user.email && (
-              <p className='w-[200px] truncate text-sm text-muted-foreground'>
-                {user.email}
-              </p>
-            )}
+
+          <div className='flex gap-1 p-2'>
+            <UserAvatar
+              user={{ name: user.name || null, image: user.image || null }}
+              className='h-9 w-9'
+            />
+
+            <div className='flex flex-col gap-1'>
+              {user.name && <p className='font-medium'>{user.name}</p>}
+              {user.email && (
+                <p className='w-[200px] truncate text-sm text-muted-foreground'>
+                  {user.email}
+                </p>
+              )}
+              </div>
+            </div>
           </div>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem className="py-2 p-3" asChild>
           <Link href='/'>
       
           Create Post
@@ -48,26 +57,45 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           </Link>         
         </DropdownMenuItem>
 
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem className="py-2 p-3" asChild>
           <Link href='/r/create'>Create Community
           <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem>
         
 
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem className="py-2 p-3" asChild>
           <Link href='/settings'>Change Username
           <DropdownMenuShortcut>⌘U</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem className="py-2 p-3" asChild>
           <Link href='/forms'>Profile Settings
           <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem> 
+
+        <DropdownMenuItem className="py-2 p-3" asChild>
+          <Link href='/Premium'>Premium
+          <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
+          </Link>
+        </DropdownMenuItem> 
+        <DropdownMenuItem className="py-2 p-3" asChild>
+          <Link href='/FAQ'>FAQ
+          <DropdownMenuShortcut>⌘F</DropdownMenuShortcut>
+          </Link>
+        </DropdownMenuItem> 
+
+        <DropdownMenuItem className="py-2 p-3" asChild>
+          <Link href='/Help'>Help Center
+          <DropdownMenuShortcut>⌘H</DropdownMenuShortcut>
+          </Link>
+        </DropdownMenuItem> 
+
+
         <DropdownMenuSeparator />
         <DropdownMenuItem
-          className='cursor-pointer'
+          className='cursor-pointer py-2 p-3'
           onSelect={(event) => {
             event.preventDefault()
             signOut({

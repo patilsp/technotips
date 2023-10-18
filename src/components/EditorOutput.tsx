@@ -21,10 +21,18 @@ const renderers = {
 
 const style = {
   paragraph: {
-    fontSize: '0.875rem',
-    lineHeight: '1.25rem',
+    letterSpacing: '-0.003em',
+    lineHeight: '32px',
+    marginTop: '.5em',
+    fontSize: '20px',
+    fontFamily: 'source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif',
+    fontStyle: 'normal',
+    wordBreak: 'break-word',
+    color: '#242424',
+    fontWeight: 400,
+    wordWrap: 'break-word',
   },
-}
+};
 
 const EditorOutput: FC<EditorOutputProps> = ({ content }) => {
   return (
