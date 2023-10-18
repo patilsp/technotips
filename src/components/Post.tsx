@@ -50,7 +50,7 @@ const Post: FC<PostProps> = ({
         transition={{ duration: 0.5, delay: 0.5 }} 
       >
     <div className='card'>
-      <div className='px-3 py-2 flex justify-between'>      
+      <div className='px-1 flex justify-between'>      
 
         <div className='w-0 flex-1'>
           <div className='max-h-40 mt-1 text-xs text-slate-700'>
@@ -122,7 +122,7 @@ const Post: FC<PostProps> = ({
          
        <DropdownMenu>
          <DropdownMenuTrigger asChild>
-           <Button variant="secondary" className="px-3 hover:shadow hover:text-white hover:bg-lime-500">
+           <Button variant="secondary" className="px-3  hover:text-white hover:bg-lime-500">
              <Forward className='h-4 w-4' /> 
            </Button>
          </DropdownMenuTrigger>
@@ -157,12 +157,11 @@ const Post: FC<PostProps> = ({
      </div>
 
        
-        <div className="flex items-center space-x-1 rounded-md text-secondary-foreground">
-       
+        <div className="flex items-center space-x-1 rounded-md text-secondary-foreground">       
          
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="secondary" className="px-3 hover:shadow  hover:text-white hover:bg-primary">
+              <Button variant="secondary" className="px-3  hover:text-white hover:bg-primary">
                 <MoreHorizontal className='h-4 w-4' /> 
               </Button>
             </DropdownMenuTrigger>

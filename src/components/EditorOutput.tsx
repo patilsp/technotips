@@ -24,7 +24,7 @@ const style = {
     letterSpacing: '-0.003em',
     lineHeight: '32px',
     marginTop: '.5em',
-    fontSize: '18px',
+    fontSize: '16px',
     fontFamily: 'source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif',
     fontStyle: 'normal',
     wordBreak: 'break-word',
