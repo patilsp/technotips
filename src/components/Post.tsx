@@ -111,7 +111,7 @@ const Post: FC<PostProps> = ({
         
         <Link
           href={`/r/${subredditName}/post/${post.id}`}
-          className='w-fit flex items-center gap-2 shadow bg-gray-50 hover:bg-orange-500 hover:text-white  rounded-sm px-3'>
+          className='w-fit flex items-center gap-2 hover:shadow hover:bg-orange-500 hover:text-white  rounded-sm px-3'>
           <MessageSquare className='h-4 w-4 ' /> {commentAmt}
         </Link>
      
@@ -122,7 +122,7 @@ const Post: FC<PostProps> = ({
          
        <DropdownMenu>
          <DropdownMenuTrigger asChild>
-           <Button variant="secondary" className="px-3 shadow bg-gray-50  hover:text-white hover:bg-lime-500">
+           <Button variant="secondary" className="px-3 hover:shadow hover:text-white hover:bg-lime-500">
              <Forward className='h-4 w-4' /> 
            </Button>
          </DropdownMenuTrigger>
@@ -162,7 +162,7 @@ const Post: FC<PostProps> = ({
          
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="secondary" className="px-3 shadow bg-gray-50 hover:text-white hover:bg-primary">
+              <Button variant="secondary" className="px-3 hover:shadow  hover:text-white hover:bg-primary">
                 <MoreHorizontal className='h-4 w-4' /> 
               </Button>
             </DropdownMenuTrigger>

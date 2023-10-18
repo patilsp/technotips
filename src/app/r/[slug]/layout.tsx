@@ -70,7 +70,7 @@ const Layout = async ({
 
           {/* info sidebar */}
           <div className='overflow-hidden bg_primary order-first md:order-last'>
-            <div className='bg_gradient px-6 py-2'>
+            <div className='bg-green-400 px-6 py-2'>
               <p className='font-semibold text-white py-3'>About {subreddit.name}</p>
             </div>
             <dl className='divide-y divide-gray-100 px-6 py-4 text-sm leading-6 bg-white'>

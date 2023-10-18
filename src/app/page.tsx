@@ -27,7 +27,7 @@ export default async function Home() {
 
               {/* subreddit info */}
               <div className="overflow-hidden bg_primary order-first md:order-last">
-                <div className="bg_gradient px-6 py-2">
+                <div className="bg-green-400 px-6 py-2">
                   <p className="font-semibold py-3 text-white flex items-center gap-1.5">
                     <HomeIcon className="h-4 w-4" />
                     Home

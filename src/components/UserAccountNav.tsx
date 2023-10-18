@@ -49,7 +49,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           </div>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="py-2 p-3" asChild>
+        <DropdownMenuItem className="p-2" asChild>
           <Link href='/'>
       
           Create Post
@@ -57,41 +57,41 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           </Link>         
         </DropdownMenuItem>
 
-        <DropdownMenuItem className="py-2 p-3" asChild>
+        <DropdownMenuItem className="p-2" asChild>
           <Link href='/r/create'>Create Community
           <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem>
         
 
-        <DropdownMenuItem className="py-2 p-3" asChild>
+        <DropdownMenuItem className="p-2" asChild>
           <Link href='/settings'>Change Username
           <DropdownMenuShortcut>⌘U</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="py-2 p-3" asChild>
+        <DropdownMenuItem className="p-2" asChild>
           <Link href='/forms'>Profile Settings
           <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem> 
 
-        <DropdownMenuItem className="py-2 p-3" asChild>
+        <DropdownMenuItem className="p-2" asChild>
           <Link href='/Premium'>Premium
           <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem> 
-        <DropdownMenuItem className="py-2 p-3" asChild>
+        <DropdownMenuItem className="p-2" asChild>
           <Link href='/FAQ'>FAQ
           <DropdownMenuShortcut>⌘F</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem> 
-        <DropdownMenuItem className="py-2 p-3" asChild>
+        <DropdownMenuItem className="p-2" asChild>
           <Link href='/FAQ'>Pricing
           <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem> 
 
-        <DropdownMenuItem className="py-2 p-3" asChild>
+        <DropdownMenuItem className="p-2" asChild>
           <Link href='/Help'>Help Center
           <DropdownMenuShortcut>⌘H</DropdownMenuShortcut>
           </Link>
@@ -100,7 +100,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
 
         <DropdownMenuSeparator />
         <DropdownMenuItem
-          className='cursor-pointer py-2 p-3'
+          className='cursor-pointer p-2'
           onSelect={(event) => {
             event.preventDefault()
             signOut({

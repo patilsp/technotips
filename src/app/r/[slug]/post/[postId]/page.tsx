@@ -97,7 +97,7 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
          
        <DropdownMenu>
          <DropdownMenuTrigger asChild>
-           <Button variant="secondary" className="px-3 shadow bg-gray-50  hover:text-white hover:bg-lime-500">
+           <Button variant="secondary" className="px-3 hover:shadow  hover:text-white hover:bg-lime-500">
              <Forward className='h-4 w-4 mr-1' />  Share
            </Button>
          </DropdownMenuTrigger>

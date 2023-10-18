@@ -78,7 +78,7 @@ const PostVoteClient = ({
   })
 
   return (
-    <div className='flex flex-row gap-2 items-center justify-between shadow bg-gray-50 rounded-sm'>
+    <div className='flex flex-row gap-2 items-center justify-between hover:shadow rounded-sm'>
       {/* upvote */}
       <Button
         onClick={() => vote('UP')}
