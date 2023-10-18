@@ -47,7 +47,7 @@ const Post: FC<PostProps> = ({
     <motion.div
         initial={{ opacity: 0, y: 50 }} 
         animate={{ opacity: 1, y: 0 }}    
-        transition={{ duration: 1, delay: 1 }} 
+        transition={{ duration: 0.5, delay: 0.5 }} 
       >
     <div className='card'>
       <div className='px-3 py-2 flex justify-between'>      
@@ -55,7 +55,7 @@ const Post: FC<PostProps> = ({
         <div className='w-0 flex-1'>
           <div className='max-h-40 mt-1 text-xs text-slate-700'>
           <div className="flex justify-between w-full">
-          <span className='max-h-40 truncate text-xs text-slate-900 text-semibold '>
+          <span className='max-h-40 truncate text-sm text-semibold text-slate-700'>
             {subredditName ? (
               <>
                 <a

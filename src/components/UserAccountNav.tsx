@@ -27,7 +27,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           className='h-8 w-8'
         />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='w-[280px] h-[450px] bg-white' align='end'>
+      <DropdownMenuContent className='w-[280px] h-[490px] bg-white' align='end'>
         <div className='flex items-center justify-start gap-2 p-1'>
           <div className='flex flex-col space-y-1 leading-none'>
 
@@ -83,6 +83,11 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
         <DropdownMenuItem className="py-2 p-3" asChild>
           <Link href='/FAQ'>FAQ
           <DropdownMenuShortcut>⌘F</DropdownMenuShortcut>
+          </Link>
+        </DropdownMenuItem> 
+        <DropdownMenuItem className="py-2 p-3" asChild>
+          <Link href='/FAQ'>Pricing
+          <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem> 
 

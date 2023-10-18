@@ -7,10 +7,21 @@ import { redis } from '@/lib/redis'
 import { formatTimeToNow } from '@/lib/utils'
 import { CachedPost } from '@/types/redis'
 import { Post, User, Vote } from '@prisma/client'
-import { ArrowBigDown, ArrowBigUp, Loader2, Share } from 'lucide-react'
+import { ArrowBigDown, ArrowBigUp, Loader2 } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
-import Link from 'next/link'
+
+import { Share, Forward, Bookmark, Link2, Youtube, Github, X, Facebook, Instagram  } from 'lucide-react'
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/registry/new-york/ui/dropdown-menu'
+import { Button } from '@/registry/new-york/ui/button'
+
 
 interface SubRedditPostPageProps {
   params: {
@@ -48,7 +59,7 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
 
         <div className='card'>
         <div className="flex justify-between w-full">
-          <p className='max-h-40 truncate text-xs text-gray-500'>
+          <p className='max-h-40 truncate text-sm text-semibold text-slate-700'>
             Posted by  {post?.author.username ?? cachedPost.authorUsername}{' '}</p>
             <span className="tag">{formatTimeToNow(new Date(post?.createdAt ?? cachedPost.createdAt))}</span>
             
@@ -80,11 +91,46 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
           />
         </Suspense>
 
-        <Link
-          href='#'
-          className='w-fit flex items-center gap-2 bg-gray-100 rounded-sm px-2'>
-          <Share className='h-4 w-4' /> Share
-        </Link>
+       
+        <div className="flex items-center space-x-1 rounded-md text-secondary-foreground">
+       
+         
+       <DropdownMenu>
+         <DropdownMenuTrigger asChild>
+           <Button variant="secondary" className="px-3 shadow bg-gray-50  hover:text-white hover:bg-lime-500">
+             <Forward className='h-4 w-4 mr-1' />  Share
+           </Button>
+         </DropdownMenuTrigger>
+         <DropdownMenuContent
+           align="center"
+           alignOffset={-5}
+           className="w-[250px]"
+           forceMount
+         >
+          
+           <DropdownMenuItem>
+             <Share className="mr-2 h-4 w-4" />Share Post Via..
+           </DropdownMenuItem>
+           <DropdownMenuItem>
+             <Bookmark className="mr-2 h-4 w-4" />Save To Bookmarks 
+           </DropdownMenuItem>
+           <DropdownMenuItem>
+             <Link2 className="mr-2 h-4 w-4" />Copy link to post
+           </DropdownMenuItem>
+           <DropdownMenuSeparator />
+           <div className="mb-2 flex w-full justify-center gap-2">
+            <div className="glassIcon"><Facebook className=""></Facebook></div>
+            <div className="glassIcon"><Instagram className=""></Instagram></div>
+            <div className="glassIcon"><Youtube className=""></Youtube></div>
+            <div className="glassIcon"><X className=""></X></div>
+            <div className="glassIcon"><Github className=""></Github></div>
+
+
+          </div>
+         </DropdownMenuContent>
+       </DropdownMenu>
+     </div>
+
 
         </div>
           

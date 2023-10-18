@@ -5,8 +5,8 @@ export default function NotFound() {
   return (
     <div className="flex flex-col justify-center mt-4">
        
-      <h1 className="mx-auto text-slate-900 text-bold text-xl text-center">Not Found</h1>     
-      <p className="mx-auto my-4 max-w-3xl text-center text-lg text-slate-700 dark:text-slate-400"> Could not find requested resource </p>
+      <h1 className="mx-auto text-slate-900 text-bold text-3xl text-center">Page Not Found :(</h1>     
+      <p className="mx-auto my-4 max-w-3xl text-center text-lg text-slate-700 dark:text-slate-400"> Oops! 😖 The requested URL was not found on this server. </p>
 
 
        <div className='flex w-full justify-center'>
