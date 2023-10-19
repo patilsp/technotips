@@ -86,7 +86,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           </Link>
         </DropdownMenuItem> 
         <DropdownMenuItem className="p-2" asChild>
-          <Link href='/FAQ'>Pricing
+          <Link href='/Pricing'>Pricing
           <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem> 

@@ -337,12 +337,6 @@ h1{
   transition: .3s ease;
 }
 
-.animate-spin{
-  color: #fa6018;
-  transition: .3s ease;
-}
-
-
 
 .description > button {
   width: 180px;
