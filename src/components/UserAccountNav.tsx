@@ -27,15 +27,15 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           className='h-8 w-8'
         />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='w-[280px] h-[420px] bg-white' align='end'>
+      <DropdownMenuContent className='w-[280px] h-[430px] bg-white' align='end'>
         <div className='flex items-center justify-start gap-2 p-1'>
           <div className='flex flex-col space-y-1 leading-none'>
 
           <div className='flex gap-1 p-2'>
-            <UserAvatar
+            {/* <UserAvatar
               user={{ name: user.name || null, image: user.image || null }}
               className='h-9 w-9'
-            />
+            /> */}
 
             <div className='flex flex-col gap-1'>
               {user.name && <p className='font-medium'>{user.name}</p>}
@@ -52,8 +52,8 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
         <DropdownMenuItem className="p-2" asChild>
           <Link href='/'>
       
-          Create Post
-          <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
+          Dashboard
+          <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
           </Link>         
         </DropdownMenuItem>
 
@@ -69,34 +69,31 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           <DropdownMenuShortcut>⌘U</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="p-2" asChild>
-          <Link href='/forms'>Profile Settings
-          <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </Link>
-        </DropdownMenuItem> 
+       
 
         <DropdownMenuItem className="p-2" asChild>
-          <Link href='/Premium'>Premium
-          <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
+          <Link href='/Help'>Command Menu
+          <DropdownMenuShortcut className="flex gap-1 rounded-sm border">  Ctrl K</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem> 
+       
         <DropdownMenuItem className="p-2" asChild>
           <Link href='/FAQ'>FAQ
           <DropdownMenuShortcut>⌘F</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem> 
-        <DropdownMenuItem className="p-2" asChild>
-          <Link href='/Pricing'>Pricing
-          <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
-          </Link>
-        </DropdownMenuItem> 
+       
 
         <DropdownMenuItem className="p-2" asChild>
-          <Link href='/Help'>Help Center
-          <DropdownMenuShortcut>⌘H</DropdownMenuShortcut>
+          <Link href='/'>Theme
+          <DropdownMenuShortcut>⌘T</DropdownMenuShortcut>
           </Link>
         </DropdownMenuItem> 
-
+        <DropdownMenuItem className="p-2" asChild>
+          <Link href='/forms'>Profile Settings
+          <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+          </Link>
+        </DropdownMenuItem> 
 
         <DropdownMenuSeparator />
         <DropdownMenuItem
@@ -110,6 +107,14 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           Sign out
           <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
         </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <div className="mt-2">
+          <Link href='/Pricing'  target='_blank' className="btn-primary text-center h-8 w-full">
+            Upgrade to Pro
+          </Link>
+
+        </div>
+
       </DropdownMenuContent>
     </DropdownMenu>
   )

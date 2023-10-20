@@ -2,8 +2,6 @@
 import React from 'react'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { Button } from "@/registry/new-york/ui/button"
 
 const page = () => {
   return (
@@ -51,7 +49,7 @@ const page = () => {
               Billed Monthly
             </p>
           </div>
-          <Link href="/sign-in">
+          <Link href="/sign-in" className="btn-primary">
             Get Started
           </Link>
         </div>
