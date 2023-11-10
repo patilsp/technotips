@@ -21,6 +21,44 @@ export default async function Home() {
         <div className="mt-1 p-2 md:border-2 md:border-gray-200 md:border-dashed sm:border-none rounded-lg dark:border-gray-700">
           <div className="max-w-7xl mx-auto w-full h-full">
             <h1 className='h1 font-bold'>My Feed</h1>
+            <div className="rounded-md py-4">
+              <div className="flex justify-left text-left">
+                <ul className="flex space-x-4">
+                  <li>
+                    <a href="#" className="text-slate-700 px-4 font-semibold hover:text-blue-400 transition duration-300">
+                      Best
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-slate-700 px-4 font-semibold hover:text-blue-400 transition duration-300">
+                      Hot
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-slate-700 px-4 font-semibold hover:text-blue-400 transition duration-300">
+                      New
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-slate-700 px-4 font-semibold hover:text-blue-400 transition duration-300">
+                      Controversial
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-slate-700 px-4 font-semibold hover:text-blue-400 transition duration-300">
+                      Top
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-slate-700 px-4 font-semibold hover:text-blue-400 transition duration-300">
+                      Rising
+                    </a>
+                  </li>
+                 
+                </ul>
+              </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-2">
               {/* @ts-expect-error server component */}
               {session ? <CustomFeed /> : <GeneralFeed />}

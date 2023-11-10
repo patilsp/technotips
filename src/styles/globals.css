@@ -70,9 +70,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Inter;
-}
 .z-1000{
   z-index: 999;
 }
@@ -601,7 +598,7 @@ h1{
   font-size: 16px;
   font-weight: 700;
   background-color: #fa6018;
-  border: 1px solid #f39c12;
+  border: 1px solid #ff8825;
   border-radius: 5px;
   padding: 5px 10px;
   box-shadow: 0px 4px 0px #d35400;
@@ -673,3 +670,48 @@ h1{
 .bg_gradient{
   background: linear-gradient(112.14deg, #FF8A00 0%, #E96922 100%) !important;
 }
+
+
+.mobile_nav a {
+  text-decoration: none;
+  /* color: #1E1E23; */
+  opacity: 1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 200ms;
+  width: 220px;
+  border-radius: 5px;
+  padding: 1px 10px;
+}
+
+.btn-outline{
+  border: 1px solid #ff8825;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+
+body {
+  --sb-track-color: #232E33;
+  --sb-thumb-color: #ff8825;
+  --sb-size: 4px;
+
+  scrollbar-color: var(--sb-thumb-color) 
+                   var(--sb-track-color);
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size) 
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 8px;
+  
+  }

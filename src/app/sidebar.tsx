@@ -1,12 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
-import { Newspaper, Command, Users, LogIn } from 'lucide-react'
+import { Newspaper, Command, Users } from 'lucide-react'
+import { CommandMenu } from '@/components/command-menu'
 
 const sidebar = () => {
   return (
     <div>
         <div className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 mt-14" aria-label="Sidebar">
             <div className="h-full px-3 py-4 overflow-y-auto dark:bg-gray-800">
+                {/* <div className="p-2">
+                    <CommandMenu />
+                </div> */}
                 <ul className="space-y-2 font-medium">
                     <Link href="/" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white bg-gray-100 dark:hover:bg-gray-700 group text-sm/[14px]" >
                         <Newspaper className="w-4 h-4 " />

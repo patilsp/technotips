@@ -8,7 +8,6 @@ import SearchBar from './SearchBar'
 import { EyeNoneIcon } from "@radix-ui/react-icons"
 import { Bell, Users } from 'lucide-react'
 import { MobileNav } from "@/components/mobile-nav"
-import { ModeToggle } from "@/components/mode-toggle"
 
 import {
   DropdownMenu,

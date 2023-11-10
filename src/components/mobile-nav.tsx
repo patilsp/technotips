@@ -3,15 +3,20 @@
 import * as React from "react"
 import Link, { LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
+import { ViewVerticalIcon } from "@radix-ui/react-icons"
+import { usePathname } from "next/navigation"
 import { docsConfig } from "@/config/docs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons"
 import { Button } from "@/registry/new-york/ui/button"
 import { ScrollArea } from "@/registry/new-york/ui/scroll-area"
 import { Sheet, SheetContent, SheetTrigger } from "@/registry/new-york/ui/sheet"
+import { motion } from "framer-motion"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
+  const pathname = usePathname()
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -20,28 +25,29 @@ export function MobileNav() {
           variant="ghost"
           className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
-          {/* <ViewVerticalIcon className="h-5 w-5" />
-          <span className="sr-only">Toggle Menu</span> */}
-        
-          <label className="toggle ml-1">
+           <label className="toggle ml-1">
               <div className="bars" id="bar1"></div>
               <div className="bars" id="bar2"></div>
               <div className="bars" id="bar3"></div>
           </label>
         </Button>
-
       </SheetTrigger>
-      <SheetContent side="left" className="pr-0 w-full">
+      <SheetContent side="left" className="w-full pr-0">
         <MobileLink
           href="/"
           className="flex items-center"
           onOpenChange={setOpen}
         >
-         
-          <span className="font-bold">{siteConfig.name}</span>
+          {/* <Icons.logo className="mr-2 h-4 w-4" /> */}
+          <span className="hero-heading text-2xl font-bold">{siteConfig.name}</span>
         </MobileLink>
-        <ScrollArea className="my-5 h-[calc(100vh-8rem)] pb-10 ml-2">
-          <div className="flex flex-col space-y-3">
+        <ScrollArea className="my-4 h-[calc(100vh-10rem)] pb-10 pl-1">
+        <motion.div
+            initial={{ opacity: 0, x: -100 }} 
+            animate={{ opacity: 1, x: 0 }}     
+            transition={{ duration: 1, delay: 1 }}  
+          >
+          <div className="mobile_nav flex flex-col space-y-3">
             {docsConfig.mainNav?.map(
               (item) =>
                 item.href && (
@@ -55,10 +61,18 @@ export function MobileNav() {
                 )
             )}
           </div>
+          </motion.div>
+
+
+          <motion.div
+            initial={{ opacity: 0, x: -100 }} 
+            animate={{ opacity: 1, x: 0 }}     
+            transition={{ duration: 1, delay: 1 }}  
+          >
           <div className="flex flex-col space-y-2">
             {docsConfig.sidebarNav.map((item, index) => (
-              <div key={index} className="flex flex-col space-y-3 pt-6">
-                <h4 className="font-bold bg-slate-100">{item.title}</h4>
+              <div key={index} className="mobile_nav flex flex-col space-y-3">
+                <h4 className="font-medium">{item.title}</h4>
                 {item?.items?.length &&
                   item.items.map((item) => (
                     <React.Fragment key={item.href}>
@@ -67,7 +81,7 @@ export function MobileNav() {
                           <MobileLink
                             href={item.href}
                             onOpenChange={setOpen}
-                            className="text-muted-foreground"
+                            className=""
                           >
                             {item.title}
                           </MobileLink>
@@ -79,6 +93,7 @@ export function MobileNav() {
               </div>
             ))}
           </div>
+          </motion.div>
         </ScrollArea>
       </SheetContent>
     </Sheet>
@@ -86,7 +101,7 @@ export function MobileNav() {
 }
 
 interface MobileLinkProps extends LinkProps {
-  onOpenChange?: () => void
+  onOpenChange?: (open: boolean) => void
   children: React.ReactNode
   className?: string
 }

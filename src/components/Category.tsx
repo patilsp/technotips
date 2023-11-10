@@ -1,7 +1,7 @@
 'use client'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import { FC } from 'react'
+import { FC, JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactFragment, ReactPortal } from 'react'
 import { Users } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -22,7 +22,7 @@ const Category: FC<CategoryProps> = ({}) => {
   return (
     
     
-    <div className="max-w-sm rounded-lg border shadow bg-white h-72 scroll-p-0 flex-none min-w-full px-4 sm:px-6 md:px-0 overflow-hidden lg:overflow-auto scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded lg:supports-scrollbars:pr-2 lg:max-h-96">
+    <div className="max-w-sm rounded-lg  h-72 scroll-p-0 flex-none min-w-full px-4 sm:px-6 md:px-0 overflow-hidden lg:overflow-auto scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded lg:supports-scrollbars:pr-2 lg:max-h-96">
     <motion.div
         initial={{ opacity: 0, y: 50 }} 
         animate={{ opacity: 1, y: 0 }}    
@@ -31,10 +31,10 @@ const Category: FC<CategoryProps> = ({}) => {
 
     {queryResults && queryResults.length > 0 ? (
       <ul>
-        {queryResults.map((subreddit) => (
+        {queryResults.map((subreddit: { id: Key | null | undefined; name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | PromiseLikeOfReactNode | null | undefined }) => (
           <li
             key={subreddit.id}
-            className="border-b border-gray-200 hover:bg-gray-200 flex justify-between px-2 py-1"
+            className=" flex justify-between px-2 py-1"
           >
           
             <div className="flex items-center justify-between w-full ">
@@ -42,7 +42,7 @@ const Category: FC<CategoryProps> = ({}) => {
                 <a className="font-semibold flex items-center justify-between w-full" href={`/r/${subreddit.name}`}>
                  
                       <p className="text-slate-900">{subreddit.name} </p>
-                      <p className="btn-primary h-8 w-[100px] float-right">
+                      <p className="btn-outline h-8 w-[100px] float-right">
                         Subscribe
                       </p>
                  

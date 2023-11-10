@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { fontSans } from '@/lib/fonts'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
-import  SiteHeader  from '@/components/Navbar'
+import  Navbar  from '@/components/Navbar'
 import { SiteFooter } from "@/components/site-footer"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -64,7 +64,7 @@ export default function RootLayout({ children, authModal }: RootLayoutProps) {
           >
              <main className='app'>
               <div className="relative flex min-h-screen flex-col">
-                <SiteHeader />
+                <Navbar />
                 {authModal}
                   <div className="flex-1">{children}</div>
                 <SiteFooter />
